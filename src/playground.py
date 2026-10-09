@@ -8,3 +8,4 @@ def print_values():
 
 
 print_values()
+print_values()
