@@ -1,0 +1,984 @@
+{
+  "metadata": {
+    "api_url": "https://clinicaltrials.gov/api/v2/studies",
+    "condition": "amyotrophic lateral sclerosis",
+    "fetched_at": "2026-10-13T11:34:57.314070+00:00",
+    "page_size": 100,
+    "max_studies": 3
+  },
+  "totalCount": 1014,
+  "studies": [
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT07357428",
+          "orgStudyIdInfo": {
+            "id": "PRT-1014"
+          },
+          "organization": {
+            "fullName": "Paradromics",
+            "class": "INDUSTRY"
+          },
+          "briefTitle": "Connect-One: Early Feasibility Study of Connexus® Brain-Computer Interface (BCI)",
+          "officialTitle": "Connect-One: Early Feasibility Study of Connexus® Brain-Computer Interface (BCI) to Provide Human Connection Through Communication",
+          "acronym": "CONNECT-ONE"
+        },
+        "statusModule": {
+          "statusVerifiedDate": "2026-04",
+          "overallStatus": "RECRUITING",
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "startDateStruct": {
+            "date": "2026-03-31",
+            "type": "ACTUAL"
+          },
+          "primaryCompletionDateStruct": {
+            "date": "2027-05",
+            "type": "ESTIMATED"
+          },
+          "completionDateStruct": {
+            "date": "2032-01",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2025-12-23",
+          "studyFirstSubmitQcDate": "2026-01-20",
+          "studyFirstPostDateStruct": {
+            "date": "2026-01-22",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2026-04-09",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-04-14",
+            "type": "ACTUAL"
+          }
+        },
+        "sponsorCollaboratorsModule": {
+          "responsibleParty": {
+            "type": "SPONSOR"
+          },
+          "leadSponsor": {
+            "name": "Paradromics",
+            "class": "INDUSTRY"
+          },
+          "collaborators": [
+            {
+              "name": "University of Michigan",
+              "class": "OTHER"
+            },
+            {
+              "name": "University of California, Davis",
+              "class": "OTHER"
+            },
+            {
+              "name": "Massachusetts General Hospital",
+              "class": "OTHER"
+            }
+          ]
+        },
+        "oversightModule": {
+          "oversightHasDmc": true,
+          "isFdaRegulatedDrug": false,
+          "isFdaRegulatedDevice": true
+        },
+        "descriptionModule": {
+          "briefSummary": "The Connect-One Study is an early feasibility study to obtain preliminary device safety information for the Connexus Brain-Computer Interface (BCI). The Connexus BCI is intended to be used as: (1) an assistive communication device to decode imagined language correlates and speech for patients with impaired communication as a result of severe loss of voluntary motor control; and (2) to provide control of computer devices for individuals with severe loss of voluntary motor control of the upper extremity."
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Amyotrophic Lateral Sclerosis",
+            "Neuromuscular Disease",
+            "Stroke",
+            "Tetraplegia/Tetraparesis",
+            "Cervical Spinal Cord Injury",
+            "Dysarthria"
+          ],
+          "keywords": [
+            "BCI",
+            "ALS",
+            "Paradromics",
+            "speech",
+            "dysarthria",
+            "neural injury",
+            "progressive neuromuscular disease",
+            "stroke",
+            "assistive technology",
+            "communication device",
+            "brain computer interface"
+          ]
+        },
+        "designModule": {
+          "studyType": "INTERVENTIONAL",
+          "phases": [
+            "NA"
+          ],
+          "designInfo": {
+            "allocation": "NA",
+            "interventionModel": "SINGLE_GROUP",
+            "primaryPurpose": "OTHER",
+            "maskingInfo": {
+              "masking": "NONE"
+            }
+          },
+          "enrollmentInfo": {
+            "count": 2,
+            "type": "ESTIMATED"
+          }
+        },
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "label": "Connect-One",
+              "type": "OTHER",
+              "interventionNames": [
+                "Device: Connexus Brain-Computer Interface"
+              ]
+            }
+          ],
+          "interventions": [
+            {
+              "type": "DEVICE",
+              "name": "Connexus Brain-Computer Interface",
+              "description": "The Connexus Brain Computer Interface is an implantable brain-computer interface.",
+              "armGroupLabels": [
+                "Connect-One"
+              ]
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "Primary Safety: Number of Subjects With Device Related Adverse Events",
+              "description": "Device Related Adverse Events: Number of subjects with device-related adverse events",
+              "timeFrame": "Up to 12 months post-implant"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "measure": "Long-Term Safety: Number of Subjects With Device Related Adverse Events",
+              "description": "Device Related Adverse Events: Number of subjects with device-related adverse events",
+              "timeFrame": "Up to 6 years post-implant"
+            }
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Clinical diagnosis of a progressive neuromuscular disease or a neurological injury.\n* Clinical diagnosis of anarthria or severe dysarthria.\n* Wheelchair dependent with severely impaired upper limb function.\n* Has a reliable method of communication and the ability to read and understand the English language.\n* Has a study care partner (e.g. caregiver or multiple caregivers) for the duration of the study.\n* Lives within a 4-hour radius of a study site.\n\nExclusion Criteria:\n\n* Cognitive impairment or psychiatric illness that could impact the ability to comply with study requirements, as determined by the Study Investigator.\n* Co-morbidities or an ongoing chronic medical condition that would impair the ability to comply with study requirements.\n* The presence of another implanted device, like a pacemaker, deep brain stimulator, or implantable pulse generator.\n* Requires, or is expected to require regular MRI scans for on-going medical conditions.\n* In the opinion of the Study Investigator, the patient is not an appropriate candidate for the study, for reasons that could place the patient at undue risk or otherwise result in non-compliance with the study requirements.",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "22 Years",
+          "maximumAge": "75 Years",
+          "stdAges": [
+            "ADULT",
+            "OLDER_ADULT"
+          ]
+        },
+        "contactsLocationsModule": {
+          "centralContacts": [
+            {
+              "name": "Paradromics Clinical Team",
+              "role": "CONTACT",
+              "phone": "(512) 559 4120",
+              "email": "clinical-team@paradromics.com"
+            }
+          ],
+          "locations": [
+            {
+              "facility": "University of California, Davis",
+              "status": "RECRUITING",
+              "city": "Sacramento",
+              "state": "California",
+              "zip": "95817",
+              "country": "United States",
+              "contacts": [
+                {
+                  "name": "David Brandman M.D., Ph.D.",
+                  "role": "CONTACT"
+                }
+              ],
+              "geoPoint": {
+                "lat": 38.58157,
+                "lon": -121.4944
+              }
+            },
+            {
+              "facility": "Massachusetts General Hospital",
+              "status": "RECRUITING",
+              "city": "Boston",
+              "state": "Massachusetts",
+              "zip": "02114",
+              "country": "United States",
+              "contacts": [
+                {
+                  "name": "Daniel Rubin, M.D., Ph.D.",
+                  "role": "CONTACT"
+                }
+              ],
+              "geoPoint": {
+                "lat": 42.35843,
+                "lon": -71.05977
+              }
+            },
+            {
+              "facility": "University of Michigan",
+              "status": "RECRUITING",
+              "city": "Ann Arbor",
+              "state": "Michigan",
+              "zip": "48109",
+              "country": "United States",
+              "contacts": [
+                {
+                  "name": "Matthew Willsey, M.D,. P.h.D",
+                  "role": "CONTACT"
+                }
+              ],
+              "geoPoint": {
+                "lat": 42.27756,
+                "lon": -83.74088
+              }
+            }
+          ]
+        },
+        "referencesModule": {
+          "seeAlsoLinks": [
+            {
+              "label": "Paradromics Clinical Study",
+              "url": "https://www.paradromics.com/clinical-study"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "miscInfoModule": {
+          "versionHolder": "2026-10-09"
+        },
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D000690",
+              "term": "Amyotrophic Lateral Sclerosis"
+            },
+            {
+              "id": "D009468",
+              "term": "Neuromuscular Diseases"
+            },
+            {
+              "id": "D020521",
+              "term": "Stroke"
+            },
+            {
+              "id": "D011782",
+              "term": "Quadriplegia"
+            },
+            {
+              "id": "D004401",
+              "term": "Dysarthria"
+            },
+            {
+              "id": "D013060",
+              "term": "Speech"
+            }
+          ],
+          "ancestors": [
+            {
+              "id": "D013118",
+              "term": "Spinal Cord Diseases"
+            },
+            {
+              "id": "D002493",
+              "term": "Central Nervous System Diseases"
+            },
+            {
+              "id": "D009422",
+              "term": "Nervous System Diseases"
+            },
+            {
+              "id": "D016472",
+              "term": "Motor Neuron Disease"
+            },
+            {
+              "id": "D019636",
+              "term": "Neurodegenerative Diseases"
+            },
+            {
+              "id": "D057177",
+              "term": "TDP-43 Proteinopathies"
+            },
+            {
+              "id": "D057165",
+              "term": "Proteostasis Deficiencies"
+            },
+            {
+              "id": "D008659",
+              "term": "Metabolic Diseases"
+            },
+            {
+              "id": "D009750",
+              "term": "Nutritional and Metabolic Diseases"
+            },
+            {
+              "id": "D002561",
+              "term": "Cerebrovascular Disorders"
+            },
+            {
+              "id": "D001927",
+              "term": "Brain Diseases"
+            },
+            {
+              "id": "D014652",
+              "term": "Vascular Diseases"
+            },
+            {
+              "id": "D002318",
+              "term": "Cardiovascular Diseases"
+            },
+            {
+              "id": "D010243",
+              "term": "Paralysis"
+            },
+            {
+              "id": "D009461",
+              "term": "Neurologic Manifestations"
+            },
+            {
+              "id": "D012816",
+              "term": "Signs and Symptoms"
+            },
+            {
+              "id": "D013568",
+              "term": "Pathological Conditions, Signs and Symptoms"
+            },
+            {
+              "id": "D001184",
+              "term": "Articulation Disorders"
+            },
+            {
+              "id": "D013064",
+              "term": "Speech Disorders"
+            },
+            {
+              "id": "D007806",
+              "term": "Language Disorders"
+            },
+            {
+              "id": "D003147",
+              "term": "Communication Disorders"
+            },
+            {
+              "id": "D019954",
+              "term": "Neurobehavioral Manifestations"
+            },
+            {
+              "id": "D014705",
+              "term": "Verbal Behavior"
+            },
+            {
+              "id": "D003142",
+              "term": "Communication"
+            },
+            {
+              "id": "D001519",
+              "term": "Behavior"
+            }
+          ]
+        }
+      },
+      "hasResults": false
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT07726563",
+          "orgStudyIdInfo": {
+            "id": "202502154DINB"
+          },
+          "organization": {
+            "fullName": "National Taiwan University Hospital",
+            "class": "OTHER"
+          },
+          "briefTitle": "Plasmapheresis in Amyotrophic Lateral Sclerosis With Autoantibody Against NRIP 2 (PALADIN2)",
+          "officialTitle": "Plasmapheresis in Amyotrophic Lateral Sclerosis With Autoantibody Against NRIP 2 (PALADIN2)",
+          "acronym": "PALADIN2"
+        },
+        "statusModule": {
+          "statusVerifiedDate": "2026-05",
+          "overallStatus": "RECRUITING",
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "startDateStruct": {
+            "date": "2026-05-19",
+            "type": "ACTUAL"
+          },
+          "primaryCompletionDateStruct": {
+            "date": "2029-01-31",
+            "type": "ESTIMATED"
+          },
+          "completionDateStruct": {
+            "date": "2029-07-31",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2026-05-19",
+          "studyFirstSubmitQcDate": "2026-07-21",
+          "studyFirstPostDateStruct": {
+            "date": "2026-07-24",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2026-07-21",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-07-24",
+            "type": "ACTUAL"
+          }
+        },
+        "sponsorCollaboratorsModule": {
+          "responsibleParty": {
+            "type": "SPONSOR"
+          },
+          "leadSponsor": {
+            "name": "National Taiwan University Hospital",
+            "class": "OTHER"
+          }
+        },
+        "oversightModule": {
+          "oversightHasDmc": false,
+          "isFdaRegulatedDrug": false,
+          "isFdaRegulatedDevice": false
+        },
+        "descriptionModule": {
+          "briefSummary": "10-20% of patients with ALS have anti-NRIP autoantibody and the titer of anti-NRIP autoantibody is correlated with motor functional decline and mortality in ALS. The PALADIN2 clinical trial is a single arm study, which intends to enroll 20 ALS patients having anti-NRIP autoantibody in plasma. Patients will receive 3 courses of plasmapheresis per 3 months in order to maintain low concentration of anti-NRIP autoantibody in plasma. The study will follow up these patients for another 6 months after plasmapheresis. This project will potentially confirm the efficacy and safety of plasmapheresis for ALS patients having anti-NRIP autoantibody."
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Amyotrophic Lateral Sclerosis (ALS)",
+            "Autoantibody",
+            "Plasmapheresis"
+          ],
+          "keywords": [
+            "amyotrophic lateral sclerosis",
+            "anti-NRIP autoantibody",
+            "plasmapheresis"
+          ]
+        },
+        "designModule": {
+          "studyType": "INTERVENTIONAL",
+          "phases": [
+            "NA"
+          ],
+          "designInfo": {
+            "allocation": "NA",
+            "interventionModel": "SINGLE_GROUP",
+            "primaryPurpose": "TREATMENT",
+            "maskingInfo": {
+              "masking": "NONE"
+            }
+          },
+          "enrollmentInfo": {
+            "count": 20,
+            "type": "ESTIMATED"
+          }
+        },
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "label": "ALS patients with anti-NRIP autoantibody",
+              "type": "EXPERIMENTAL",
+              "interventionNames": [
+                "Device: plasmapheresis"
+              ]
+            }
+          ],
+          "interventions": [
+            {
+              "type": "DEVICE",
+              "name": "plasmapheresis",
+              "description": "Using plasmapheresis to remove plasma anti-NRIP autoantibody; each patient receive 3 courses of plasmapheresis with 3 months apart",
+              "armGroupLabels": [
+                "ALS patients with anti-NRIP autoantibody"
+              ]
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "Change in disease progression rates measuring using ALSFRS-R (Amyotrophic Lateral Sclerosis Functional Rating Scale-Revised)",
+              "description": "Difference between \\[(ALSFRS-R at month -3 - ALSFRS-R at month 0)/3\\] and \\[(ALSFRS-R at month 0 - ALSFRS-R at month 9)/9\\]; Months -3 to 0 vs. Months 0 to 9; the higher above ratio means higher disease progression rate",
+              "timeFrame": "12 months"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "measure": "Change in disease progression rates measuring using ALSFRS-R (Amyotrophic Lateral Sclerosis Functional Rating Scale-Revised)",
+              "description": "Difference between \\[(ALSFRS-R at month -3 - ALSFRS-R at month 0)/3\\] and \\[(ALSFRS-R at month 0 - ALSFRS-R at month 12)/12\\]; Months -3 to 0 vs. Months 0 to 12; the higher above ratio means higher disease progression rate",
+              "timeFrame": "15 months"
+            },
+            {
+              "measure": "Change in disease progression rates measuring using ALSFRS-R (Amyotrophic Lateral Sclerosis Functional Rating Scale-Revised)",
+              "description": "Difference between \\[(ALSFRS-R at month -3 - ALSFRS-R at month 0)/3\\] and \\[(ALSFRS-R at month 0 - ALSFRS-R at month 3)/3\\]; Months -3 to 0 vs. Months 0 to 3; the higher above ratio means higher disease progression rate",
+              "timeFrame": "6 months"
+            },
+            {
+              "measure": "Change in disease severity measuring using ALSFRS-R (Amyotrophic Lateral Sclerosis Functional Rating Scale-Revised)",
+              "description": "The ALSFRS-R at months 3, 6, 9,12 as compared to that at month 0; the lower the AFSFRS-R, the worse disease severity",
+              "timeFrame": "12 months"
+            },
+            {
+              "measure": "Change in disease progression rates measuring using MRC (Medical Research Council score) mega-score",
+              "description": "Difference between \\[(MRC mega-score at month -3 - MRC mega-score at month 0)/3\\] and \\[(MRC mega-score at month 0 - MRC mega-score at month 12)/12\\]; Months -3 to 0 vs. Months 0 to 12; the higher above ratio means higher disease progression rate",
+              "timeFrame": "15 months"
+            },
+            {
+              "measure": "Change in disease progression rates measuring using Grips force (lb)",
+              "description": "Description: Difference between \\[(Grips force at month -3 - Grips force at month 0)/3\\] and \\[(Grips force at month 0 - Grips force at month 12)/12\\]; Months -3 to 0 vs. Months 0 to 12; the higher above ratio means higher disease progression rate",
+              "timeFrame": "15 months"
+            },
+            {
+              "measure": "Change in disease progression rates measuring using 6MWT (6 minute walking test); distance in meters",
+              "description": "Difference between \\[(distance at month -3 - distance at month 0)/3\\] and \\[(distance at month 0 - distance at month 12)/12\\]; Months -3 to 0 vs. Months 0 to 12; the higher above ratio, the higher disease progression rate",
+              "timeFrame": "15 months"
+            },
+            {
+              "measure": "Change in disease progression rates measuring using EQ-5D (EuroQol Group Life Quality Score)",
+              "description": "Difference between \\[(Score at month -3 - Score at month 0)/3\\] and \\[(Score at month 0 - Score at month 12)/12\\]; Months -3 to 0 vs. Months 0 to 12; the higher above ratio means higher disease progression rate",
+              "timeFrame": "15 months"
+            },
+            {
+              "measure": "Change in disease progression rates measuring using respiratory vital capacity (standardized vital capacity, %)",
+              "description": "Difference between \\[(vital capacity -3 - vital capacity at month 0)/3\\] and \\[(vital capacity at month 0 - vital capacity at month 12)/12\\]; Months -3 to 0 vs. Months 0 to 12; the higher above ratio means higher disease progression rate",
+              "timeFrame": "15 months"
+            },
+            {
+              "measure": "Change in disease progression rates measuring using CMAP (compound muscle action potential, mV)",
+              "description": "Difference between \\[(CMAP -3 - CMAP at month 0)/3\\] and \\[(CMAP at month 0 - CMAP at month 12)/12\\]; Months -3 to 0 vs. Months 0 to 12; the higher above ratio means higher disease progression rate",
+              "timeFrame": "15 months"
+            },
+            {
+              "measure": "Change in disease progression rates measuring using MUNE (motor unit number estimation; number)",
+              "description": "Difference between \\[(MUNE -3 - MUNE at month 0)/3\\] and \\[(MUNE at month 0 - MUNE at month 12)/12\\]; Months -3 to 0 vs. Months 0 to 12; the higher above ratio means higher disease progression rate",
+              "timeFrame": "15 months"
+            },
+            {
+              "measure": "Change in disease severity measuring using plasma NF-L (Neurofilament-light chain; pg/mL)",
+              "description": "The NF-L at months 3, 6, 9,12 as compared to that at month 0; the lower the NF-L, the milder disease activity",
+              "timeFrame": "12 months"
+            },
+            {
+              "measure": "Any side effect under plasmapheresis",
+              "timeFrame": "12 months"
+            }
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* ALS patients above 20-year-old who have anti-NRIP autoantibody in plasma\n* Agree to receive plasmapheresis treatment\n* Agree to participate in the study and receive serial examinations\n\nExclusion Criteria:\n\n* Under permanent ventilator support\n* Cannot receive plasmapheresis treatment or serial examinations\n* Under pregnancy\n* Blood fibrinogen level below 50 mg/dl\n* Belong to special subtype of ALS, such as primary lateral sclerosis, progressive muscular atrophy, flail arm syndrome, flail leg syndrome.",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "20 Years",
+          "stdAges": [
+            "ADULT",
+            "OLDER_ADULT"
+          ]
+        },
+        "contactsLocationsModule": {
+          "centralContacts": [
+            {
+              "name": "Li-Kai Tsai, MD, PhD",
+              "role": "CONTACT",
+              "phone": "+886972651560",
+              "email": "milikai@ntuh.gov.tw"
+            }
+          ],
+          "locations": [
+            {
+              "facility": "National Taiwan University Hospital",
+              "status": "RECRUITING",
+              "city": "Taipei City",
+              "state": "Taipei",
+              "zip": "100",
+              "country": "Taiwan",
+              "contacts": [
+                {
+                  "name": "Li-Kai Tsai, MD, PhD",
+                  "role": "CONTACT",
+                  "phone": "886-2-972651560",
+                  "email": "milikai@ntuh.gov.tw"
+                },
+                {
+                  "role": "CONTACT",
+                  "email": "milikai@ntuh.gov.tw"
+                },
+                {
+                  "name": "Li-Kai Tsai, MD, PhD",
+                  "role": "PRINCIPAL_INVESTIGATOR"
+                }
+              ]
+            }
+          ]
+        },
+        "referencesModule": {
+          "references": [
+            {
+              "pmid": "33773096",
+              "type": "BACKGROUND",
+              "citation": "Tsai LK, Chen IH, Chao CC, Hsueh HW, Chen HH, Huang YH, Weng RW, Lai TY, Tsai YC, Tsao YP, Chen SL. Autoantibody of NRIP, a novel AChR-interacting protein, plays a detrimental role in myasthenia gravis. J Cachexia Sarcopenia Muscle. 2021 Jun;12(3):665-676. doi: 10.1002/jcsm.12697. Epub 2021 Mar 26."
+            }
+          ]
+        },
+        "ipdSharingStatementModule": {
+          "ipdSharing": "YES",
+          "infoTypes": [
+            "STUDY_PROTOCOL",
+            "SAP",
+            "ICF",
+            "CSR"
+          ],
+          "timeFrame": "After the end of the study"
+        }
+      },
+      "derivedSection": {
+        "miscInfoModule": {
+          "versionHolder": "2026-10-09"
+        },
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D000690",
+              "term": "Amyotrophic Lateral Sclerosis"
+            }
+          ],
+          "ancestors": [
+            {
+              "id": "D013118",
+              "term": "Spinal Cord Diseases"
+            },
+            {
+              "id": "D002493",
+              "term": "Central Nervous System Diseases"
+            },
+            {
+              "id": "D009422",
+              "term": "Nervous System Diseases"
+            },
+            {
+              "id": "D016472",
+              "term": "Motor Neuron Disease"
+            },
+            {
+              "id": "D019636",
+              "term": "Neurodegenerative Diseases"
+            },
+            {
+              "id": "D057177",
+              "term": "TDP-43 Proteinopathies"
+            },
+            {
+              "id": "D009468",
+              "term": "Neuromuscular Diseases"
+            },
+            {
+              "id": "D057165",
+              "term": "Proteostasis Deficiencies"
+            },
+            {
+              "id": "D008659",
+              "term": "Metabolic Diseases"
+            },
+            {
+              "id": "D009750",
+              "term": "Nutritional and Metabolic Diseases"
+            }
+          ]
+        },
+        "interventionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D010956",
+              "term": "Plasmapheresis"
+            }
+          ],
+          "ancestors": [
+            {
+              "id": "D001781",
+              "term": "Blood Component Removal"
+            },
+            {
+              "id": "D013812",
+              "term": "Therapeutics"
+            },
+            {
+              "id": "D016060",
+              "term": "Sorption Detoxification"
+            },
+            {
+              "id": "D005112",
+              "term": "Extracorporeal Circulation"
+            },
+            {
+              "id": "D013514",
+              "term": "Surgical Procedures, Operative"
+            }
+          ]
+        }
+      },
+      "hasResults": false
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT01640067",
+          "orgStudyIdInfo": {
+            "id": "EudraCT: 2009-014484-39"
+          },
+          "organization": {
+            "fullName": "Azienda Ospedaliera Santa Maria, Terni, Italy",
+            "class": "OTHER"
+          },
+          "briefTitle": "Human Neural Stem Cell Transplantation in Amyotrophic Lateral Sclerosis (ALS)",
+          "officialTitle": "Intra-spinal Cord Delivery of Human Neural Stem Cells in ALS Patients: Proposal for a Phase I Study/ Trapianto Intramidollare di Cellule Staminali Neurali Umane Come Terapia Putativa Per la SLA: Proposta di un Trial Clinico di Fase I",
+          "acronym": "hNSCALS"
+        },
+        "statusModule": {
+          "statusVerifiedDate": "2015-12",
+          "overallStatus": "COMPLETED",
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "startDateStruct": {
+            "date": "2011-12"
+          },
+          "primaryCompletionDateStruct": {
+            "date": "2015-12",
+            "type": "ACTUAL"
+          },
+          "completionDateStruct": {
+            "date": "2015-12",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2012-07-09",
+          "studyFirstSubmitQcDate": "2012-07-11",
+          "studyFirstPostDateStruct": {
+            "date": "2012-07-13",
+            "type": "ESTIMATED"
+          },
+          "lastUpdateSubmitDate": "2015-12-29",
+          "lastUpdatePostDateStruct": {
+            "date": "2015-12-30",
+            "type": "ESTIMATED"
+          }
+        },
+        "sponsorCollaboratorsModule": {
+          "responsibleParty": {
+            "type": "PRINCIPAL_INVESTIGATOR",
+            "investigatorFullName": "Angelo Luigi Vescovi",
+            "investigatorTitle": "Scientific Director of Laboratorio Cellule Staminali, Cell Factory e Biobanca AOSP di Terni, Scientific Director IRCCS Casa Sollievo della Sofferenza S.Giovanni Rotondo Italy",
+            "investigatorAffiliation": "Azienda Ospedaliera Santa Maria, Terni, Italy"
+          },
+          "leadSponsor": {
+            "name": "Azienda Ospedaliera Santa Maria, Terni, Italy",
+            "class": "OTHER"
+          },
+          "collaborators": [
+            {
+              "name": "Azienda Ospedaliero Universitaria Maggiore della Carita",
+              "class": "OTHER"
+            },
+            {
+              "name": "University of Padova",
+              "class": "OTHER"
+            }
+          ]
+        },
+        "oversightModule": {
+          "oversightHasDmc": true
+        },
+        "descriptionModule": {
+          "briefSummary": "Primary aim of the trial\n\n1. to verify safety and tolerability of expanded human fetal neural stem cells\n2. to verify safety and tolerability of a microsurgery human fetal neural stem cells transplantation model\n3. to recognize each change in patient's quality of life\n\nSecondary aim of the trial\n\n1. assessment of the impact of human neural stem cells transplantation on the disability of ALS in a clinically significant and measurable way\n2. Assessment of the impact of human neural stem cells transplantation on mortality (all causes)",
+          "detailedDescription": "18 patients diagnosed as definite ALS according to the El Escorial criteria will be recruited during two years. The patients will be divided into 3 groups with different severity. Each group will be less compromised than the group that went before them. Their breathing measurements must be at least 60%. Subjects will receive injections of the human foetal neural stem cells into the spinal cord. A variety of tests and examinations will take place every month for the first year and every three months for the next two in order to monitor the course of the disease and the adverse events."
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Amyotrophic Lateral Sclerosis"
+          ],
+          "keywords": [
+            "amyotrophic lateral sclerosis",
+            "motor neuron disease",
+            "stem cells",
+            "safety",
+            "ALS-FRS-Functional scale R and FVC (%) variation",
+            "Survival analysis",
+            "Changes in quality of life scales"
+          ]
+        },
+        "designModule": {
+          "studyType": "INTERVENTIONAL",
+          "phases": [
+            "PHASE1"
+          ],
+          "designInfo": {
+            "allocation": "NA",
+            "interventionModel": "SINGLE_GROUP",
+            "maskingInfo": {
+              "masking": "NONE"
+            }
+          },
+          "enrollmentInfo": {
+            "count": 18,
+            "type": "ACTUAL"
+          }
+        },
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "label": "Human Neural Stem Cells Suspension",
+              "type": "EXPERIMENTAL",
+              "description": "50,000 cells/µl. Patients received either unilateral or bilateral hNSCs microinjections (3 microinjections on each side) into the lumbar spinal cord. Each microinjection consisted of 15 µl of the above 50,000cells/µl suspension, yielding a total of 750,000 cells per injection site.",
+              "interventionNames": [
+                "Biological: Human Neural Stem Cells"
+              ]
+            }
+          ],
+          "interventions": [
+            {
+              "type": "BIOLOGICAL",
+              "name": "Human Neural Stem Cells",
+              "description": "Surgical microinjection of human neural stem cells on spinal cord of ALS patients",
+              "armGroupLabels": [
+                "Human Neural Stem Cells Suspension"
+              ],
+              "otherNames": [
+                "Human Neural Stem Cells Suspension"
+              ]
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "safety of a microsurgery human neural stem cells transplantation into spinal cord of ALS patients",
+              "description": "* Percentage of subjects (%) with treatment-related mortality defined as death due to procedure and not to the course of the disease\n* Number of adverse events related to the procedure\n* Changes in neuroradiological (MRI) and neurophysiological variables (SEP, MEP)\n* Changes in neuropsychological variables",
+              "timeFrame": "Participants will be followed for at least 3 years. Monthly in the first year and every three months the following two years"
+            }
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Diagnosis of definite or possible ALS according to revised EL Escorial criteria\n* Age: 20-75 years\n* documented progression of disease during the last 6 months.\n* Absence of concomitant diseases\n* Adequate assurances of adherence to protocol\n* The patient must be able to communicate verbally or with the use of non-verbal communication system\n\nGroup 1\n\n* maximum score of 1 on walking item of ALS functional rating scale\n* forced vital capacity \\> or equal to 60\n\nGroup 2\n\n* forced vital capacity \\> or equal to 60\n* ambulation difficulties (maximum score of 2 on walking item of ALS functional rating scale)\n\nGroup 3\n\n* Independent ambulation (score 4 on a scale ALS-FRS)\n* forced vital capacity \\> or equal to 70\n\nExclusion Criteria:\n\nThe presence of at least one of the following will lead to patient exclusion.\n\n1. psychiatric diseases or other neurological diseases different from ALS\n2. other systemic diseases\n3. Neoplasms or other diseases reducing life expectancy\n4. Antecedent polio infection\n5. corticosteroids, immunoglobulin or immunosuppressive treatment\n6. involvement in other clinical trials\n7. 2 or more critical items in MMPI\n8. neuropsychological evaluation suggestive of mental deterioration or cognitive sphere disturbance.\n9. Impediments to MRI\n10. patients unable to understand informed consent form and study aims.\n11. women who are pregnant or childbearing potential for the duration of the study. Non-pregnant status will be documented by beta-HCG negative test 7 days before treatment start",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "20 Years",
+          "maximumAge": "75 Years",
+          "stdAges": [
+            "ADULT",
+            "OLDER_ADULT"
+          ]
+        },
+        "contactsLocationsModule": {
+          "overallOfficials": [
+            {
+              "name": "Angelo L Vescovi, Professor",
+              "affiliation": "IRCCS Casa Sollievo della Soffernza and AOSP Terni, Italy",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "locations": [
+            {
+              "facility": "Azienda Ospedaliera Santa Maria",
+              "city": "Terni",
+              "state": "Terni",
+              "zip": "05100",
+              "country": "Italy",
+              "geoPoint": {
+                "lat": 42.56335,
+                "lon": 12.64329
+              }
+            }
+          ]
+        },
+        "referencesModule": {
+          "references": [
+            {
+              "pmid": "23934834",
+              "type": "BACKGROUND",
+              "citation": "Gelati M, Profico D, Projetti-Pensi M, Muzi G, Sgaravizzi G, Vescovi AL. Culturing and expansion of \"clinical grade\" precursors cells from the fetal human central nervous system. Methods Mol Biol. 2013;1059:65-77. doi: 10.1007/978-1-62703-574-3_6."
+            },
+            {
+              "pmid": "25889343",
+              "type": "RESULT",
+              "citation": "Mazzini L, Gelati M, Profico DC, Sgaravizzi G, Projetti Pensi M, Muzi G, Ricciolini C, Rota Nodari L, Carletti S, Giorgi C, Spera C, Domenico F, Bersano E, Petruzzelli F, Cisari C, Maglione A, Sarnelli MF, Stecco A, Querin G, Masiero S, Cantello R, Ferrari D, Zalfa C, Binda E, Visioli A, Trombetta D, Novelli A, Torres B, Bernardini L, Carriero A, Prandi P, Servo S, Cerino A, Cima V, Gaiani A, Nasuelli N, Massara M, Glass J, Soraru G, Boulis NM, Vescovi AL. Human neural stem cell transplantation in ALS: initial results from a phase I trial. J Transl Med. 2015 Jan 27;13:17. doi: 10.1186/s12967-014-0371-2."
+            },
+            {
+              "pmid": "34558001",
+              "type": "DERIVED",
+              "citation": "Gelati M, Profico DC, Ferrari D, Vescovi AL. Culturing and Expansion of \"Clinical Grade\" Neural Stem Cells from the Fetal Human Central Nervous System. Methods Mol Biol. 2022;2389:57-66. doi: 10.1007/978-1-0716-1783-0_5."
+            },
+            {
+              "pmid": "23463272",
+              "type": "DERIVED",
+              "citation": "Robberecht W, Philips T. The changing scene of amyotrophic lateral sclerosis. Nat Rev Neurosci. 2013 Apr;14(4):248-64. doi: 10.1038/nrn3430. Epub 2013 Mar 6."
+            }
+          ],
+          "seeAlsoLinks": [
+            {
+              "label": "No profit Association that grant this study",
+              "url": "http://www.revertonlus.org/"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "miscInfoModule": {
+          "versionHolder": "2026-10-09"
+        },
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D000690",
+              "term": "Amyotrophic Lateral Sclerosis"
+            },
+            {
+              "id": "D016472",
+              "term": "Motor Neuron Disease"
+            }
+          ],
+          "ancestors": [
+            {
+              "id": "D013118",
+              "term": "Spinal Cord Diseases"
+            },
+            {
+              "id": "D002493",
+              "term": "Central Nervous System Diseases"
+            },
+            {
+              "id": "D009422",
+              "term": "Nervous System Diseases"
+            },
+            {
+              "id": "D019636",
+              "term": "Neurodegenerative Diseases"
+            },
+            {
+              "id": "D057177",
+              "term": "TDP-43 Proteinopathies"
+            },
+            {
+              "id": "D009468",
+              "term": "Neuromuscular Diseases"
+            },
+            {
+              "id": "D057165",
+              "term": "Proteostasis Deficiencies"
+            },
+            {
+              "id": "D008659",
+              "term": "Metabolic Diseases"
+            },
+            {
+              "id": "D009750",
+              "term": "Nutritional and Metabolic Diseases"
+            }
+          ]
+        }
+      },
+      "hasResults": false
+    }
+  ]
+}

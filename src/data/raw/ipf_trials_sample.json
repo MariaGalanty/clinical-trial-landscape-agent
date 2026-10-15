@@ -1,0 +1,2642 @@
+{
+  "metadata": {
+    "api_url": "https://clinicaltrials.gov/api/v2/studies",
+    "condition": "idiopathic pulmonary fibrosis",
+    "fetched_at": "2026-10-13T11:33:30.351496+00:00",
+    "page_size": 100,
+    "max_studies": 3
+  },
+  "totalCount": 637,
+  "studies": [
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT01969409",
+          "orgStudyIdInfo": {
+            "id": "HL119960"
+          },
+          "organization": {
+            "fullName": "University of Alabama at Birmingham",
+            "class": "OTHER"
+          },
+          "briefTitle": "Autoantibody Reduction Therapy in Patients With Idiopathic Pulmonary Fibrosis",
+          "officialTitle": "Autoantibody Reduction Therapy in Patients With Idiopathic Pulmonary Fibrosis (ART-IPF)",
+          "acronym": "ART-IPF"
+        },
+        "statusModule": {
+          "statusVerifiedDate": "2024-08",
+          "overallStatus": "COMPLETED",
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "startDateStruct": {
+            "date": "2014-01",
+            "type": "ACTUAL"
+          },
+          "primaryCompletionDateStruct": {
+            "date": "2019-01-31",
+            "type": "ACTUAL"
+          },
+          "completionDateStruct": {
+            "date": "2020-11-30",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2013-10-17",
+          "studyFirstSubmitQcDate": "2013-10-21",
+          "studyFirstPostDateStruct": {
+            "date": "2013-10-25",
+            "type": "ESTIMATED"
+          },
+          "resultsFirstSubmitDate": "2020-07-08",
+          "resultsFirstSubmitQcDate": "2021-11-16",
+          "resultsFirstPostDateStruct": {
+            "date": "2021-11-18",
+            "type": "ACTUAL"
+          },
+          "dispFirstSubmitDate": "2020-04-02",
+          "dispFirstSubmitQcDate": "2020-04-02",
+          "dispFirstPostDateStruct": {
+            "date": "2020-04-07",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2024-08-19",
+          "lastUpdatePostDateStruct": {
+            "date": "2024-08-21",
+            "type": "ACTUAL"
+          }
+        },
+        "sponsorCollaboratorsModule": {
+          "responsibleParty": {
+            "type": "PRINCIPAL_INVESTIGATOR",
+            "investigatorFullName": "Steven R. Duncan, MD",
+            "investigatorTitle": "Priniciple Investigator",
+            "investigatorAffiliation": "University of Alabama at Birmingham"
+          },
+          "leadSponsor": {
+            "name": "University of Alabama at Birmingham",
+            "class": "OTHER"
+          },
+          "collaborators": [
+            {
+              "name": "National Institutes of Health (NIH)",
+              "class": "NIH"
+            }
+          ]
+        },
+        "oversightModule": {
+          "oversightHasDmc": true,
+          "isFdaRegulatedDrug": true,
+          "isFdaRegulatedDevice": false,
+          "isUsExport": true
+        },
+        "descriptionModule": {
+          "briefSummary": "Recent research studies have suggested that proteins called antibodies that are produced by the immune system might be involved in the lung damage of idiopathic pulmonary fibrosis (IPF). Antibodies produced by the immune system normal help to fight infections by attacking bacteria and viruses without harming our own tissues. In patients with IPF, there is evidence that certain antibodies (called autoantibodies) attack the lung and contributes to the injury and scarring that occurs in IPF. Our recent studies have found that many IPF patients appear to have excessive autoantibody levels in blood and lungs that might make their disease worse.\n\nRituximab is a medication approved by the Food and Drug Administration (FDA) for the treatment of autoantibody diseases such as rheumatoid arthritis. Rituximab works by destroying B cells, a type of white blood cell, called a B-lymphocyte, which produce autoantibodies. In this research study, rituximab will be given into a vein to reduce the autoantibody levels that we believe might be contributing to the lung damage in IPF.\n\nThis study is being conducted to determine if rituximab provides beneficial effects for IPF patients by decreasing further lung injury.",
+          "detailedDescription": "This is a double-blinded, Phase II trial in which 58 ambulatory IPF patients at any of four medical centers (University of Pittsburgh, University of Chicago, Geisinger Medical Center, and Temple University) will be randomized equally to 1. placebo or 2. two doses of rituximab 1 gm i.v., with a 14 day interval inbetween doses.\n\nSubjects will be followed for 9 months."
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Ambulatory IPF"
+          ],
+          "keywords": [
+            "Lung",
+            "Fibrosis"
+          ]
+        },
+        "designModule": {
+          "studyType": "INTERVENTIONAL",
+          "phases": [
+            "PHASE2"
+          ],
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "primaryPurpose": "TREATMENT",
+            "maskingInfo": {
+              "masking": "TRIPLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "CARE_PROVIDER",
+                "INVESTIGATOR"
+              ]
+            }
+          },
+          "enrollmentInfo": {
+            "count": 58,
+            "type": "ACTUAL"
+          }
+        },
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "label": "Placebo",
+              "type": "PLACEBO_COMPARATOR",
+              "description": "These subjects will receive i.v. placebo (5% dextrose in water) administered identically to the rituximab.",
+              "interventionNames": [
+                "Drug: Placebo"
+              ]
+            },
+            {
+              "label": "Rituximab",
+              "type": "EXPERIMENTAL",
+              "description": "Rituximab i.v. given on two occasions, with 14 days between doses.",
+              "interventionNames": [
+                "Drug: Rituximab"
+              ]
+            }
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "Rituximab",
+              "description": "i.v. rituximab given on two occasions 14 days apart.",
+              "armGroupLabels": [
+                "Rituximab"
+              ]
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo",
+              "description": "Subjects randomized to placebo will receive two i.v. doses of 5% dextrose in water (D5W) in the same schedule as the rituximab subjects. The D5W and rituximab preparations will be indistinguishable.",
+              "armGroupLabels": [
+                "Placebo"
+              ],
+              "otherNames": [
+                "Placebo (D5W) i.v."
+              ]
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "Autoantibodies to Human Epidermoid (HEp)-2 Cells",
+              "description": "Titers of anti-HEp-2 autoantibodies, by indirect immunofluorescence assays (IFA) over 9 months, month 9 reported. Titers represent the highest dilution of patient plasma wherein the autoantibodies can be detected. Higher titers denote greater autoantibody concentrations.",
+              "timeFrame": "baseline to 9 months"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "measure": "Changes in Anti-Heat Shock Protein 70 (HSP70) Autoantibodies",
+              "description": "Changes of anti-HSP70 plasma concentrations as determined by ELISA, month 9 reported. The result is expressed as optical density (OD) units. The greater the number; the more autoantibody.",
+              "timeFrame": "baseline to 9 months"
+            },
+            {
+              "measure": "Changes in Forced Vital Capacity (FVC)",
+              "description": "FVC values over the observation period will be measured by spirometry, month 9 reported.",
+              "timeFrame": "baseline thru 9 months"
+            },
+            {
+              "measure": "Number of Adverse Events (AE)",
+              "description": "AE in the two treatment arms will be compared. Serious adverse events, as defined by national toxicity scale.",
+              "timeFrame": "during the 9 months of observation"
+            },
+            {
+              "measure": "Number of Acute Exacerbations",
+              "description": "The number of acute exacerbations, defined using consensus criteria (new/worsened hypoxemia and dyspnea, with characteristic radiographic changes within the last 30 days).",
+              "timeFrame": "during the study duration of 9 months"
+            },
+            {
+              "measure": "Absolute Survival Percentage",
+              "description": "Absolute survival in the two arms calculated by actuarial methods (Kaplan-Meier). These result in percent survival denoted as means and +/- standard error (these are detailed in the outcome table below).",
+              "timeFrame": "during 9 months of observation"
+            },
+            {
+              "measure": "Transplant-Free Survival",
+              "description": "Actuarial transplant-free survival in the two arms, calculated by actuarial methods (Kaplan-Meier).\n\nThese result in percent survival denoted as means and +/- standard error (these are detailed in the outcome table below).",
+              "timeFrame": "during 9 months of observation"
+            },
+            {
+              "measure": "Hospitalizations",
+              "description": "The number of hospitalizations in the two arms will be compared.",
+              "timeFrame": "during 9 months of observation"
+            }
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\nAmbulatory patients with a diagnosis of IPF, not established \\>5 years from the enrollment date, that fulfills American Thoracic Society (ATS)/European Thoracic Society (ETS) Consensus Criteria.\n\nAbility and willingness to give informed consent. Presence of autoantibodies against Hepatoma-2 (HEp-2) cells, the assay for the primary endpoint.\n\nAge 50-85 y.o.\n\nExclusion Criteria:\n\nDiagnoses of current infection, proven or suspected by participating physicians based upon their clinical assessments.\n\nPresence of active hepatitis B or C, or HIV infection. Presence of positive CONVENTIONAL autoimmune serologic tests, e.g., Antinuclear Antibodies (ANA), Rheumatoid Factor (RF), Anti-Ro, Anti-LA, Anti-Ribonucleoprotein Antibodies (RNP), Anti-Jo-1.\n\nHistory of reaction to murine-derived products or any of the trial medications, or prior exposures to human-murine chimeric antibodies.\n\nMalignancy, excluding basal or squamous cell skin cancer and low-risk prostate cancer, defined as stage T1 or T2a with Prostate-Specific Antigen (PSA) less than 10 ng/dl.\n\nUnwillingness to complete post-treatment surveillance for 9 months. Diagnosis of major morbidities (aside from IPF) expected to interfere with subjects' study participation for 9 months.\n\nTreatment for \\>5 days within the preceding month with \\>10 mg. prednisone (or equivalent corticosteroid) or any treatment during the preceding month with a potent cellular immunosuppressant (e.g., cyclophosphamide, methotrexate, mycophenolate, azathioprine, calcineurin inhibitors, etc.).\n\nUncontrolled diabetes or hypertension that preclude safe treatment with methylprednisolone.\n\nConcurrent participation in other experimental trials.\n\nPregnancy or unwillingness to use contraception during the duration of the study among female participants with child-bearing potential.\n\nRatio of forced expiratory volume in 1 second to forced vital capacity (FEV1/FVC) \\<70% of predicted values.",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "50 Years",
+          "maximumAge": "85 Years",
+          "stdAges": [
+            "ADULT",
+            "OLDER_ADULT"
+          ]
+        },
+        "contactsLocationsModule": {
+          "overallOfficials": [
+            {
+              "name": "Steven R Duncan, MD",
+              "affiliation": "University of Alabama at Birmingham",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "locations": [
+            {
+              "facility": "University of Alabama at Birmingham",
+              "city": "Birmingham",
+              "state": "Alabama",
+              "zip": "35233",
+              "country": "United States",
+              "geoPoint": {
+                "lat": 33.52066,
+                "lon": -86.80249
+              }
+            },
+            {
+              "facility": "Brigham and Women's Hospital",
+              "city": "Boston",
+              "state": "Massachusetts",
+              "zip": "02115",
+              "country": "United States",
+              "geoPoint": {
+                "lat": 42.35843,
+                "lon": -71.05977
+              }
+            },
+            {
+              "facility": "University of Minnestoa",
+              "city": "Minneapolis",
+              "state": "Minnesota",
+              "zip": "55455",
+              "country": "United States",
+              "geoPoint": {
+                "lat": 44.97997,
+                "lon": -93.26384
+              }
+            },
+            {
+              "facility": "Geisinger Medical Center",
+              "city": "Danville",
+              "state": "Pennsylvania",
+              "zip": "17822",
+              "country": "United States",
+              "geoPoint": {
+                "lat": 40.96342,
+                "lon": -76.61273
+              }
+            },
+            {
+              "facility": "Temple University",
+              "city": "Philadelphia",
+              "state": "Pennsylvania",
+              "zip": "19122",
+              "country": "United States",
+              "geoPoint": {
+                "lat": 39.95238,
+                "lon": -75.16362
+              }
+            },
+            {
+              "facility": "University of Pittsburgh Medical Center",
+              "city": "Pittsburgh",
+              "state": "Pennsylvania",
+              "zip": "15213",
+              "country": "United States",
+              "geoPoint": {
+                "lat": 40.44062,
+                "lon": -79.99589
+              }
+            },
+            {
+              "facility": "Medical University of South Carolina",
+              "city": "Charleston",
+              "state": "South Carolina",
+              "zip": "29425",
+              "country": "United States",
+              "geoPoint": {
+                "lat": 32.77632,
+                "lon": -79.93275
+              }
+            }
+          ]
+        },
+        "ipdSharingStatementModule": {
+          "ipdSharing": "NO"
+        }
+      },
+      "resultsSection": {
+        "participantFlowModule": {
+          "groups": [
+            {
+              "id": "FG000",
+              "title": "Placebo",
+              "description": "These subjects will receive i.v. placebo (5% dextrose in water) administered identically to the rituximab.\n\nPlacebo: Subjects randomized to placebo will receive two i.v. doses of 5% dextrose in water (D5W) in the same schedule as the rituximab subjects. The D5W and rituximab preparations will be indistinguishable."
+            },
+            {
+              "id": "FG001",
+              "title": "Rituximab",
+              "description": "Rituximab i.v. given on two occasions, with 14 days between doses.\n\nRituximab: i.v. rituximab given on two occasions 14 days apart."
+            }
+          ],
+          "periods": [
+            {
+              "title": "Overall Study",
+              "milestones": [
+                {
+                  "type": "STARTED",
+                  "achievements": [
+                    {
+                      "groupId": "FG000",
+                      "numSubjects": "28"
+                    },
+                    {
+                      "groupId": "FG001",
+                      "numSubjects": "30"
+                    }
+                  ]
+                },
+                {
+                  "type": "COMPLETED",
+                  "achievements": [
+                    {
+                      "groupId": "FG000",
+                      "numSubjects": "25"
+                    },
+                    {
+                      "groupId": "FG001",
+                      "numSubjects": "26"
+                    }
+                  ]
+                },
+                {
+                  "type": "NOT COMPLETED",
+                  "achievements": [
+                    {
+                      "groupId": "FG000",
+                      "numSubjects": "3"
+                    },
+                    {
+                      "groupId": "FG001",
+                      "numSubjects": "4"
+                    }
+                  ]
+                }
+              ],
+              "dropWithdraws": [
+                {
+                  "type": "Death",
+                  "reasons": [
+                    {
+                      "groupId": "FG000",
+                      "numSubjects": "2"
+                    },
+                    {
+                      "groupId": "FG001",
+                      "numSubjects": "2"
+                    }
+                  ]
+                },
+                {
+                  "type": "Transplant",
+                  "reasons": [
+                    {
+                      "groupId": "FG000",
+                      "numSubjects": "1"
+                    },
+                    {
+                      "groupId": "FG001",
+                      "numSubjects": "1"
+                    }
+                  ]
+                },
+                {
+                  "type": "Withdrawal by Subject",
+                  "reasons": [
+                    {
+                      "groupId": "FG000",
+                      "numSubjects": "0"
+                    },
+                    {
+                      "groupId": "FG001",
+                      "numSubjects": "1"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "baselineCharacteristicsModule": {
+          "groups": [
+            {
+              "id": "BG000",
+              "title": "Placebo",
+              "description": "These subjects will receive i.v. placebo (5% dextrose in water) administered identically to the rituximab.\n\nPlacebo: Subjects randomized to placebo will receive two i.v. doses of 5% dextrose in water (D5W) in the same schedule as the rituximab subjects. The D5W and rituximab preparations will be indistinguishable."
+            },
+            {
+              "id": "BG001",
+              "title": "Rituximab",
+              "description": "Rituximab i.v. given on two occasions, with 14 days between doses.\n\nRituximab: i.v. rituximab given on two occasions 14 days apart."
+            },
+            {
+              "id": "BG002",
+              "title": "Total",
+              "description": "Total of all reporting groups"
+            }
+          ],
+          "denoms": [
+            {
+              "units": "Participants",
+              "counts": [
+                {
+                  "groupId": "BG000",
+                  "value": "28"
+                },
+                {
+                  "groupId": "BG001",
+                  "value": "30"
+                },
+                {
+                  "groupId": "BG002",
+                  "value": "58"
+                }
+              ]
+            }
+          ],
+          "measures": [
+            {
+              "title": "Age, Continuous",
+              "paramType": "MEAN",
+              "dispersionType": "STANDARD_DEVIATION",
+              "unitOfMeasure": "years",
+              "classes": [
+                {
+                  "categories": [
+                    {
+                      "measurements": [
+                        {
+                          "groupId": "BG000",
+                          "value": "70",
+                          "spread": "7"
+                        },
+                        {
+                          "groupId": "BG001",
+                          "value": "68",
+                          "spread": "7"
+                        },
+                        {
+                          "groupId": "BG002",
+                          "value": "69",
+                          "spread": "7"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Sex: Female, Male",
+              "paramType": "COUNT_OF_PARTICIPANTS",
+              "unitOfMeasure": "Participants",
+              "classes": [
+                {
+                  "categories": [
+                    {
+                      "title": "Female",
+                      "measurements": [
+                        {
+                          "groupId": "BG000",
+                          "value": "5"
+                        },
+                        {
+                          "groupId": "BG001",
+                          "value": "7"
+                        },
+                        {
+                          "groupId": "BG002",
+                          "value": "12"
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Male",
+                      "measurements": [
+                        {
+                          "groupId": "BG000",
+                          "value": "23"
+                        },
+                        {
+                          "groupId": "BG001",
+                          "value": "23"
+                        },
+                        {
+                          "groupId": "BG002",
+                          "value": "46"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Race (NIH/OMB)",
+              "paramType": "COUNT_OF_PARTICIPANTS",
+              "unitOfMeasure": "Participants",
+              "classes": [
+                {
+                  "categories": [
+                    {
+                      "title": "American Indian or Alaska Native",
+                      "measurements": [
+                        {
+                          "groupId": "BG000",
+                          "value": "0"
+                        },
+                        {
+                          "groupId": "BG001",
+                          "value": "0"
+                        },
+                        {
+                          "groupId": "BG002",
+                          "value": "0"
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Asian",
+                      "measurements": [
+                        {
+                          "groupId": "BG000",
+                          "value": "0"
+                        },
+                        {
+                          "groupId": "BG001",
+                          "value": "0"
+                        },
+                        {
+                          "groupId": "BG002",
+                          "value": "0"
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Native Hawaiian or Other Pacific Islander",
+                      "measurements": [
+                        {
+                          "groupId": "BG000",
+                          "value": "0"
+                        },
+                        {
+                          "groupId": "BG001",
+                          "value": "0"
+                        },
+                        {
+                          "groupId": "BG002",
+                          "value": "0"
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Black or African American",
+                      "measurements": [
+                        {
+                          "groupId": "BG000",
+                          "value": "0"
+                        },
+                        {
+                          "groupId": "BG001",
+                          "value": "0"
+                        },
+                        {
+                          "groupId": "BG002",
+                          "value": "0"
+                        }
+                      ]
+                    },
+                    {
+                      "title": "White",
+                      "measurements": [
+                        {
+                          "groupId": "BG000",
+                          "value": "28"
+                        },
+                        {
+                          "groupId": "BG001",
+                          "value": "30"
+                        },
+                        {
+                          "groupId": "BG002",
+                          "value": "58"
+                        }
+                      ]
+                    },
+                    {
+                      "title": "More than one race",
+                      "measurements": [
+                        {
+                          "groupId": "BG000",
+                          "value": "0"
+                        },
+                        {
+                          "groupId": "BG001",
+                          "value": "0"
+                        },
+                        {
+                          "groupId": "BG002",
+                          "value": "0"
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Unknown or Not Reported",
+                      "measurements": [
+                        {
+                          "groupId": "BG000",
+                          "value": "0"
+                        },
+                        {
+                          "groupId": "BG001",
+                          "value": "0"
+                        },
+                        {
+                          "groupId": "BG002",
+                          "value": "0"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Region of Enrollment",
+              "paramType": "NUMBER",
+              "unitOfMeasure": "participants",
+              "classes": [
+                {
+                  "title": "United States",
+                  "categories": [
+                    {
+                      "measurements": [
+                        {
+                          "groupId": "BG000",
+                          "value": "28"
+                        },
+                        {
+                          "groupId": "BG001",
+                          "value": "30"
+                        },
+                        {
+                          "groupId": "BG002",
+                          "value": "58"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "outcomeMeasuresModule": {
+          "outcomeMeasures": [
+            {
+              "type": "PRIMARY",
+              "title": "Autoantibodies to Human Epidermoid (HEp)-2 Cells",
+              "description": "Titers of anti-HEp-2 autoantibodies, by indirect immunofluorescence assays (IFA) over 9 months, month 9 reported. Titers represent the highest dilution of patient plasma wherein the autoantibodies can be detected. Higher titers denote greater autoantibody concentrations.",
+              "populationDescription": "7 not analyzed: 4 deaths, 2 transplants, 1 dropout",
+              "reportingStatus": "POSTED",
+              "paramType": "MEAN",
+              "dispersionType": "Standard Error",
+              "unitOfMeasure": "titer",
+              "timeFrame": "baseline to 9 months",
+              "groups": [
+                {
+                  "id": "OG000",
+                  "title": "Placebo",
+                  "description": "These subjects will receive i.v. placebo (5% dextrose in water) administered identically to the rituximab.\n\nPlacebo: Subjects randomized to placebo will receive two i.v. doses of 5% dextrose in water (D5W) in the same schedule as the rituximab subjects. The D5W and rituximab preparations will be indistinguishable."
+                },
+                {
+                  "id": "OG001",
+                  "title": "Rituximab",
+                  "description": "Rituximab i.v. given on two occasions, with 14 days between doses.\n\nRituximab: i.v. rituximab given on two occasions 14 days apart."
+                }
+              ],
+              "denoms": [
+                {
+                  "units": "Participants",
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "25"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "26"
+                    }
+                  ]
+                }
+              ],
+              "classes": [
+                {
+                  "categories": [
+                    {
+                      "measurements": [
+                        {
+                          "groupId": "OG000",
+                          "value": "288",
+                          "spread": "63"
+                        },
+                        {
+                          "groupId": "OG001",
+                          "value": "177",
+                          "spread": "29"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "SECONDARY",
+              "title": "Changes in Anti-Heat Shock Protein 70 (HSP70) Autoantibodies",
+              "description": "Changes of anti-HSP70 plasma concentrations as determined by ELISA, month 9 reported. The result is expressed as optical density (OD) units. The greater the number; the more autoantibody.",
+              "populationDescription": "7 not analyzed: 4 deaths, 2 transplants, 1 dropout",
+              "reportingStatus": "POSTED",
+              "paramType": "MEAN",
+              "dispersionType": "Standard Error",
+              "unitOfMeasure": "OD units",
+              "timeFrame": "baseline to 9 months",
+              "groups": [
+                {
+                  "id": "OG000",
+                  "title": "Placebo",
+                  "description": "These subjects will receive i.v. placebo (5% dextrose in water) administered identically to the rituximab.\n\nPlacebo: Subjects randomized to placebo will receive two i.v. doses of 5% dextrose in water (D5W) in the same schedule as the rituximab subjects. The D5W and rituximab preparations will be indistinguishable."
+                },
+                {
+                  "id": "OG001",
+                  "title": "Rituximab",
+                  "description": "Rituximab i.v. given on two occasions, with 14 days between doses.\n\nRituximab: i.v. rituximab given on two occasions 14 days apart."
+                }
+              ],
+              "denoms": [
+                {
+                  "units": "Participants",
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "25"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "26"
+                    }
+                  ]
+                }
+              ],
+              "classes": [
+                {
+                  "categories": [
+                    {
+                      "measurements": [
+                        {
+                          "groupId": "OG000",
+                          "value": "1.0",
+                          "spread": "0.13"
+                        },
+                        {
+                          "groupId": "OG001",
+                          "value": "0.83",
+                          "spread": "0.08"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "SECONDARY",
+              "title": "Changes in Forced Vital Capacity (FVC)",
+              "description": "FVC values over the observation period will be measured by spirometry, month 9 reported.",
+              "populationDescription": "7 not analyzed: 4 deaths, 2 transplants, 1 dropout",
+              "reportingStatus": "POSTED",
+              "paramType": "MEAN",
+              "dispersionType": "Standard Error",
+              "unitOfMeasure": "liters",
+              "timeFrame": "baseline thru 9 months",
+              "groups": [
+                {
+                  "id": "OG000",
+                  "title": "Placebo",
+                  "description": "These subjects will receive i.v. placebo (5% dextrose in water) administered identically to the rituximab.\n\nPlacebo: Subjects randomized to placebo will receive two i.v. doses of 5% dextrose in water (D5W) in the same schedule as the rituximab subjects. The D5W and rituximab preparations will be indistinguishable."
+                },
+                {
+                  "id": "OG001",
+                  "title": "Rituximab",
+                  "description": "Rituximab i.v. given on two occasions, with 14 days between doses.\n\nRituximab: i.v. rituximab given on two occasions 14 days apart."
+                }
+              ],
+              "denoms": [
+                {
+                  "units": "Participants",
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "25"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "26"
+                    }
+                  ]
+                }
+              ],
+              "classes": [
+                {
+                  "categories": [
+                    {
+                      "measurements": [
+                        {
+                          "groupId": "OG000",
+                          "value": "2.6",
+                          "spread": "0.14"
+                        },
+                        {
+                          "groupId": "OG001",
+                          "value": "2.5",
+                          "spread": "0.16"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "SECONDARY",
+              "title": "Number of Adverse Events (AE)",
+              "description": "AE in the two treatment arms will be compared. Serious adverse events, as defined by national toxicity scale.",
+              "populationDescription": "Data not complete in 7 due to 4 deaths, 2 transplants, 1 dropout",
+              "reportingStatus": "POSTED",
+              "paramType": "NUMBER",
+              "unitOfMeasure": "serious adverse events",
+              "timeFrame": "during the 9 months of observation",
+              "groups": [
+                {
+                  "id": "OG000",
+                  "title": "Placebo",
+                  "description": "These subjects will receive i.v. placebo (5% dextrose in water) administered identically to the rituximab.\n\nPlacebo: Subjects randomized to placebo will receive two i.v. doses of 5% dextrose in water (D5W) in the same schedule as the rituximab subjects. The D5W and rituximab preparations will be indistinguishable."
+                },
+                {
+                  "id": "OG001",
+                  "title": "Rituximab",
+                  "description": "Rituximab i.v. given on two occasions, with 14 days between doses.\n\nRituximab: i.v. rituximab given on two occasions 14 days apart."
+                }
+              ],
+              "denoms": [
+                {
+                  "units": "Participants",
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "25"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "26"
+                    }
+                  ]
+                }
+              ],
+              "classes": [
+                {
+                  "categories": [
+                    {
+                      "measurements": [
+                        {
+                          "groupId": "OG000",
+                          "value": "7"
+                        },
+                        {
+                          "groupId": "OG001",
+                          "value": "12"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "SECONDARY",
+              "title": "Number of Acute Exacerbations",
+              "description": "The number of acute exacerbations, defined using consensus criteria (new/worsened hypoxemia and dyspnea, with characteristic radiographic changes within the last 30 days).",
+              "populationDescription": "Data from 7 incomplete: 4 deaths, 2 transplants, 1 dropout",
+              "reportingStatus": "POSTED",
+              "paramType": "NUMBER",
+              "unitOfMeasure": "acute exacerbations",
+              "timeFrame": "during the study duration of 9 months",
+              "groups": [
+                {
+                  "id": "OG000",
+                  "title": "Placebo",
+                  "description": "These subjects will receive i.v. placebo (5% dextrose in water) administered identically to the rituximab.\n\nPlacebo: Subjects randomized to placebo will receive two i.v. doses of 5% dextrose in water (D5W) in the same schedule as the rituximab subjects. The D5W and rituximab preparations will be indistinguishable."
+                },
+                {
+                  "id": "OG001",
+                  "title": "Rituximab",
+                  "description": "Rituximab i.v. given on two occasions, with 14 days between doses.\n\nRituximab: i.v. rituximab given on two occasions 14 days apart."
+                }
+              ],
+              "denoms": [
+                {
+                  "units": "Participants",
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "25"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "26"
+                    }
+                  ]
+                }
+              ],
+              "classes": [
+                {
+                  "categories": [
+                    {
+                      "measurements": [
+                        {
+                          "groupId": "OG000",
+                          "value": "1"
+                        },
+                        {
+                          "groupId": "OG001",
+                          "value": "2"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "SECONDARY",
+              "title": "Absolute Survival Percentage",
+              "description": "Absolute survival in the two arms calculated by actuarial methods (Kaplan-Meier). These result in percent survival denoted as means and +/- standard error (these are detailed in the outcome table below).",
+              "populationDescription": "1 dropout (censored event)",
+              "reportingStatus": "POSTED",
+              "paramType": "MEAN",
+              "dispersionType": "Standard Error",
+              "unitOfMeasure": "percent of participants",
+              "timeFrame": "during 9 months of observation",
+              "groups": [
+                {
+                  "id": "OG000",
+                  "title": "Placebo",
+                  "description": "These subjects will receive i.v. placebo (5% dextrose in water) administered identically to the rituximab.\n\nPlacebo: Subjects randomized to placebo will receive two i.v. doses of 5% dextrose in water (D5W) in the same schedule as the rituximab subjects. The D5W and rituximab preparations will be indistinguishable."
+                },
+                {
+                  "id": "OG001",
+                  "title": "Rituximab",
+                  "description": "Rituximab i.v. given on two occasions, with 14 days between doses.\n\nRituximab: i.v. rituximab given on two occasions 14 days apart."
+                }
+              ],
+              "denoms": [
+                {
+                  "units": "Participants",
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "28"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "30"
+                    }
+                  ]
+                }
+              ],
+              "classes": [
+                {
+                  "categories": [
+                    {
+                      "measurements": [
+                        {
+                          "groupId": "OG000",
+                          "value": "93",
+                          "spread": "5"
+                        },
+                        {
+                          "groupId": "OG001",
+                          "value": "93",
+                          "spread": "5"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "SECONDARY",
+              "title": "Transplant-Free Survival",
+              "description": "Actuarial transplant-free survival in the two arms, calculated by actuarial methods (Kaplan-Meier).\n\nThese result in percent survival denoted as means and +/- standard error (these are detailed in the outcome table below).",
+              "populationDescription": "1 dropout",
+              "reportingStatus": "POSTED",
+              "paramType": "MEAN",
+              "dispersionType": "Standard Error",
+              "unitOfMeasure": "percentage of participants",
+              "timeFrame": "during 9 months of observation",
+              "groups": [
+                {
+                  "id": "OG000",
+                  "title": "Placebo",
+                  "description": "These subjects will receive i.v. placebo (5% dextrose in water) administered identically to the rituximab.\n\nPlacebo: Subjects randomized to placebo will receive two i.v. doses of 5% dextrose in water (D5W) in the same schedule as the rituximab subjects. The D5W and rituximab preparations will be indistinguishable."
+                },
+                {
+                  "id": "OG001",
+                  "title": "Rituximab",
+                  "description": "Rituximab i.v. given on two occasions, with 14 days between doses.\n\nRituximab: i.v. rituximab given on two occasions 14 days apart."
+                }
+              ],
+              "denoms": [
+                {
+                  "units": "Participants",
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "28"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "29"
+                    }
+                  ]
+                }
+              ],
+              "classes": [
+                {
+                  "categories": [
+                    {
+                      "measurements": [
+                        {
+                          "groupId": "OG000",
+                          "value": "89",
+                          "spread": "6"
+                        },
+                        {
+                          "groupId": "OG001",
+                          "value": "90",
+                          "spread": "6"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "SECONDARY",
+              "title": "Hospitalizations",
+              "description": "The number of hospitalizations in the two arms will be compared.",
+              "populationDescription": "incomplete data on 1 dropout",
+              "reportingStatus": "POSTED",
+              "paramType": "NUMBER",
+              "unitOfMeasure": "number of admissions",
+              "timeFrame": "during 9 months of observation",
+              "groups": [
+                {
+                  "id": "OG000",
+                  "title": "Placebo",
+                  "description": "These subjects will receive i.v. placebo (5% dextrose in water) administered identically to the rituximab.\n\nPlacebo: Subjects randomized to placebo will receive two i.v. doses of 5% dextrose in water (D5W) in the same schedule as the rituximab subjects. The D5W and rituximab preparations will be indistinguishable."
+                },
+                {
+                  "id": "OG001",
+                  "title": "Rituximab",
+                  "description": "Rituximab i.v. given on two occasions, with 14 days between doses.\n\nRituximab: i.v. rituximab given on two occasions 14 days apart."
+                }
+              ],
+              "denoms": [
+                {
+                  "units": "Participants",
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "28"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "30"
+                    }
+                  ]
+                }
+              ],
+              "classes": [
+                {
+                  "categories": [
+                    {
+                      "measurements": [
+                        {
+                          "groupId": "OG000",
+                          "value": "6"
+                        },
+                        {
+                          "groupId": "OG001",
+                          "value": "12"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "adverseEventsModule": {
+          "frequencyThreshold": "5",
+          "timeFrame": "Baseline to 9 months",
+          "eventGroups": [
+            {
+              "id": "EG000",
+              "title": "Placebo",
+              "description": "These subjects will receive i.v. placebo (5% dextrose in water) administered identically to the rituximab.\n\nPlacebo: Subjects randomized to placebo will receive two i.v. doses of 5% dextrose in water (D5W) in the same schedule as the rituximab subjects. The D5W and rituximab preparations will be indistinguishable.",
+              "deathsNumAffected": 2,
+              "deathsNumAtRisk": 28,
+              "seriousNumAffected": 5,
+              "seriousNumAtRisk": 28,
+              "otherNumAffected": 21,
+              "otherNumAtRisk": 28
+            },
+            {
+              "id": "EG001",
+              "title": "Rituximab",
+              "description": "Rituximab i.v. given on two occasions, with 14 days between doses.\n\nRituximab: i.v. rituximab given on two occasions 14 days apart.",
+              "deathsNumAffected": 2,
+              "deathsNumAtRisk": 30,
+              "seriousNumAffected": 9,
+              "seriousNumAtRisk": 30,
+              "otherNumAffected": 24,
+              "otherNumAtRisk": 30
+            }
+          ],
+          "seriousEvents": [
+            {
+              "term": "Infection",
+              "organSystem": "Respiratory, thoracic and mediastinal disorders",
+              "assessmentType": "SYSTEMATIC_ASSESSMENT",
+              "notes": "Pneumonia",
+              "stats": [
+                {
+                  "groupId": "EG000",
+                  "numEvents": 1,
+                  "numAffected": 1,
+                  "numAtRisk": 28
+                },
+                {
+                  "groupId": "EG001",
+                  "numEvents": 1,
+                  "numAffected": 1,
+                  "numAtRisk": 30
+                }
+              ]
+            },
+            {
+              "term": "Infection",
+              "organSystem": "Gastrointestinal disorders",
+              "assessmentType": "SYSTEMATIC_ASSESSMENT",
+              "notes": "Appendicitis Colitis",
+              "stats": [
+                {
+                  "groupId": "EG000",
+                  "numEvents": 0,
+                  "numAffected": 0,
+                  "numAtRisk": 28
+                },
+                {
+                  "groupId": "EG001",
+                  "numEvents": 2,
+                  "numAffected": 2,
+                  "numAtRisk": 30
+                }
+              ]
+            },
+            {
+              "term": "Worsening respiratory function",
+              "organSystem": "Respiratory, thoracic and mediastinal disorders",
+              "assessmentType": "SYSTEMATIC_ASSESSMENT",
+              "notes": "Increased dyspnea without acute exacerbation",
+              "stats": [
+                {
+                  "groupId": "EG000",
+                  "numEvents": 1,
+                  "numAffected": 1,
+                  "numAtRisk": 28
+                },
+                {
+                  "groupId": "EG001",
+                  "numEvents": 4,
+                  "numAffected": 2,
+                  "numAtRisk": 30
+                }
+              ]
+            },
+            {
+              "term": "cerebral vascular accident",
+              "organSystem": "Nervous system disorders",
+              "assessmentType": "SYSTEMATIC_ASSESSMENT",
+              "notes": "stroke",
+              "stats": [
+                {
+                  "groupId": "EG000",
+                  "numEvents": 1,
+                  "numAffected": 1,
+                  "numAtRisk": 28
+                },
+                {
+                  "groupId": "EG001",
+                  "numEvents": 0,
+                  "numAffected": 0,
+                  "numAtRisk": 30
+                }
+              ]
+            },
+            {
+              "term": "syncope",
+              "organSystem": "Nervous system disorders",
+              "assessmentType": "SYSTEMATIC_ASSESSMENT",
+              "notes": "syncope",
+              "stats": [
+                {
+                  "groupId": "EG000",
+                  "numEvents": 1,
+                  "numAffected": 1,
+                  "numAtRisk": 28
+                },
+                {
+                  "groupId": "EG001",
+                  "numEvents": 0,
+                  "numAffected": 0,
+                  "numAtRisk": 30
+                }
+              ]
+            },
+            {
+              "term": "Acute exacerbation of idiopathic pulmonary fibrosis",
+              "organSystem": "Respiratory, thoracic and mediastinal disorders",
+              "assessmentType": "SYSTEMATIC_ASSESSMENT",
+              "notes": "Acute exacerbation",
+              "stats": [
+                {
+                  "groupId": "EG000",
+                  "numEvents": 1,
+                  "numAffected": 1,
+                  "numAtRisk": 28
+                },
+                {
+                  "groupId": "EG001",
+                  "numEvents": 2,
+                  "numAffected": 2,
+                  "numAtRisk": 30
+                }
+              ]
+            },
+            {
+              "term": "Myocardial Infarct",
+              "organSystem": "Cardiac disorders",
+              "assessmentType": "SYSTEMATIC_ASSESSMENT",
+              "notes": "myocardial infarct",
+              "stats": [
+                {
+                  "groupId": "EG000",
+                  "numEvents": 0,
+                  "numAffected": 0,
+                  "numAtRisk": 28
+                },
+                {
+                  "groupId": "EG001",
+                  "numEvents": 2,
+                  "numAffected": 2,
+                  "numAtRisk": 30
+                }
+              ]
+            },
+            {
+              "term": "Right ventricular failure",
+              "organSystem": "Cardiac disorders",
+              "assessmentType": "SYSTEMATIC_ASSESSMENT",
+              "notes": "Right heart failure",
+              "stats": [
+                {
+                  "groupId": "EG000",
+                  "numEvents": 2,
+                  "numAffected": 2,
+                  "numAtRisk": 28
+                },
+                {
+                  "groupId": "EG001",
+                  "numEvents": 0,
+                  "numAffected": 0,
+                  "numAtRisk": 30
+                }
+              ]
+            },
+            {
+              "term": "carotid revascularization",
+              "organSystem": "Nervous system disorders",
+              "assessmentType": "SYSTEMATIC_ASSESSMENT",
+              "notes": "carotid artery stint",
+              "stats": [
+                {
+                  "groupId": "EG000",
+                  "numEvents": 0,
+                  "numAffected": 0,
+                  "numAtRisk": 28
+                },
+                {
+                  "groupId": "EG001",
+                  "numEvents": 1,
+                  "numAffected": 1,
+                  "numAtRisk": 30
+                }
+              ]
+            }
+          ],
+          "otherEvents": [
+            {
+              "term": "flushing",
+              "organSystem": "General disorders",
+              "assessmentType": "SYSTEMATIC_ASSESSMENT",
+              "notes": "flushing",
+              "stats": [
+                {
+                  "groupId": "EG000",
+                  "numEvents": 2,
+                  "numAffected": 2,
+                  "numAtRisk": 28
+                },
+                {
+                  "groupId": "EG001",
+                  "numEvents": 3,
+                  "numAffected": 2,
+                  "numAtRisk": 30
+                }
+              ]
+            },
+            {
+              "term": "fever",
+              "organSystem": "General disorders",
+              "assessmentType": "SYSTEMATIC_ASSESSMENT",
+              "notes": "fever self reported",
+              "stats": [
+                {
+                  "groupId": "EG000",
+                  "numEvents": 1,
+                  "numAffected": 1,
+                  "numAtRisk": 28
+                },
+                {
+                  "groupId": "EG001",
+                  "numEvents": 3,
+                  "numAffected": 2,
+                  "numAtRisk": 30
+                }
+              ]
+            },
+            {
+              "term": "dry mouth",
+              "organSystem": "General disorders",
+              "assessmentType": "SYSTEMATIC_ASSESSMENT",
+              "notes": "dry mouth",
+              "stats": [
+                {
+                  "groupId": "EG000",
+                  "numEvents": 7,
+                  "numAffected": 4,
+                  "numAtRisk": 28
+                },
+                {
+                  "groupId": "EG001",
+                  "numEvents": 6,
+                  "numAffected": 3,
+                  "numAtRisk": 30
+                }
+              ]
+            },
+            {
+              "term": "Infection unspecified (mild)",
+              "organSystem": "Infections and infestations",
+              "assessmentType": "SYSTEMATIC_ASSESSMENT",
+              "notes": "infection",
+              "stats": [
+                {
+                  "groupId": "EG000",
+                  "numEvents": 2,
+                  "numAffected": 2,
+                  "numAtRisk": 28
+                },
+                {
+                  "groupId": "EG001",
+                  "numEvents": 0,
+                  "numAffected": 0,
+                  "numAtRisk": 30
+                }
+              ]
+            },
+            {
+              "term": "chest tightness",
+              "organSystem": "Cardiac disorders",
+              "assessmentType": "SYSTEMATIC_ASSESSMENT",
+              "notes": "chest tightness, Not Otherwise Specified (NOS)",
+              "stats": [
+                {
+                  "groupId": "EG000",
+                  "numEvents": 2,
+                  "numAffected": 2,
+                  "numAtRisk": 28
+                },
+                {
+                  "groupId": "EG001",
+                  "numEvents": 0,
+                  "numAffected": 0,
+                  "numAtRisk": 30
+                }
+              ]
+            },
+            {
+              "term": "arrhythmia",
+              "organSystem": "Cardiac disorders",
+              "assessmentType": "SYSTEMATIC_ASSESSMENT",
+              "notes": "mild, NOS",
+              "stats": [
+                {
+                  "groupId": "EG000",
+                  "numEvents": 3,
+                  "numAffected": 3,
+                  "numAtRisk": 28
+                },
+                {
+                  "groupId": "EG001",
+                  "numEvents": 0,
+                  "numAffected": 0,
+                  "numAtRisk": 30
+                }
+              ]
+            },
+            {
+              "term": "Hypertension",
+              "organSystem": "Cardiac disorders",
+              "assessmentType": "SYSTEMATIC_ASSESSMENT",
+              "notes": "blood pressure elevated greater than usual",
+              "stats": [
+                {
+                  "groupId": "EG000",
+                  "numEvents": 3,
+                  "numAffected": 2,
+                  "numAtRisk": 28
+                },
+                {
+                  "groupId": "EG001",
+                  "numEvents": 5,
+                  "numAffected": 2,
+                  "numAtRisk": 30
+                }
+              ]
+            },
+            {
+              "term": "palpitations",
+              "organSystem": "Cardiac disorders",
+              "assessmentType": "SYSTEMATIC_ASSESSMENT",
+              "notes": "self reported palpitations NOS",
+              "stats": [
+                {
+                  "groupId": "EG000",
+                  "numEvents": 0,
+                  "numAffected": 0,
+                  "numAtRisk": 28
+                },
+                {
+                  "groupId": "EG001",
+                  "numEvents": 2,
+                  "numAffected": 2,
+                  "numAtRisk": 30
+                }
+              ]
+            },
+            {
+              "term": "Pruritis",
+              "organSystem": "Skin and subcutaneous tissue disorders",
+              "assessmentType": "SYSTEMATIC_ASSESSMENT",
+              "notes": "pruritis",
+              "stats": [
+                {
+                  "groupId": "EG000",
+                  "numEvents": 5,
+                  "numAffected": 2,
+                  "numAtRisk": 28
+                },
+                {
+                  "groupId": "EG001",
+                  "numEvents": 3,
+                  "numAffected": 3,
+                  "numAtRisk": 30
+                }
+              ]
+            },
+            {
+              "term": "Rash",
+              "organSystem": "Skin and subcutaneous tissue disorders",
+              "assessmentType": "SYSTEMATIC_ASSESSMENT",
+              "notes": "skin rash NOS",
+              "stats": [
+                {
+                  "groupId": "EG000",
+                  "numEvents": 2,
+                  "numAffected": 1,
+                  "numAtRisk": 28
+                },
+                {
+                  "groupId": "EG001",
+                  "numEvents": 7,
+                  "numAffected": 7,
+                  "numAtRisk": 30
+                }
+              ]
+            },
+            {
+              "term": "Brusing",
+              "organSystem": "Surgical and medical procedures",
+              "assessmentType": "SYSTEMATIC_ASSESSMENT",
+              "notes": "Ecchymosis",
+              "stats": [
+                {
+                  "groupId": "EG000",
+                  "numEvents": 2,
+                  "numAffected": 2,
+                  "numAtRisk": 28
+                },
+                {
+                  "groupId": "EG001",
+                  "numEvents": 1,
+                  "numAffected": 1,
+                  "numAtRisk": 30
+                }
+              ]
+            },
+            {
+              "term": "abdominal pain",
+              "organSystem": "Gastrointestinal disorders",
+              "assessmentType": "SYSTEMATIC_ASSESSMENT",
+              "notes": "abdominal pain self limited and NOS",
+              "stats": [
+                {
+                  "groupId": "EG000",
+                  "numEvents": 1,
+                  "numAffected": 1,
+                  "numAtRisk": 28
+                },
+                {
+                  "groupId": "EG001",
+                  "numEvents": 3,
+                  "numAffected": 2,
+                  "numAtRisk": 30
+                }
+              ]
+            },
+            {
+              "term": "Anorexia",
+              "organSystem": "Gastrointestinal disorders",
+              "assessmentType": "SYSTEMATIC_ASSESSMENT",
+              "notes": "loss of appetite",
+              "stats": [
+                {
+                  "groupId": "EG000",
+                  "numEvents": 3,
+                  "numAffected": 2,
+                  "numAtRisk": 28
+                },
+                {
+                  "groupId": "EG001",
+                  "numEvents": 3,
+                  "numAffected": 3,
+                  "numAtRisk": 30
+                }
+              ]
+            },
+            {
+              "term": "Diarrhea",
+              "organSystem": "Gastrointestinal disorders",
+              "assessmentType": "SYSTEMATIC_ASSESSMENT",
+              "notes": "diarrhea",
+              "stats": [
+                {
+                  "groupId": "EG000",
+                  "numEvents": 7,
+                  "numAffected": 4,
+                  "numAtRisk": 28
+                },
+                {
+                  "groupId": "EG001",
+                  "numEvents": 5,
+                  "numAffected": 5,
+                  "numAtRisk": 30
+                }
+              ]
+            },
+            {
+              "term": "Nausea",
+              "organSystem": "Gastrointestinal disorders",
+              "assessmentType": "SYSTEMATIC_ASSESSMENT",
+              "notes": "nausea with or without vomiting",
+              "stats": [
+                {
+                  "groupId": "EG000",
+                  "numEvents": 5,
+                  "numAffected": 4,
+                  "numAtRisk": 28
+                },
+                {
+                  "groupId": "EG001",
+                  "numEvents": 7,
+                  "numAffected": 6,
+                  "numAtRisk": 30
+                }
+              ]
+            },
+            {
+              "term": "Hyperglycemia",
+              "organSystem": "Metabolism and nutrition disorders",
+              "assessmentType": "SYSTEMATIC_ASSESSMENT",
+              "notes": "elevated blood sugar greater than baseline",
+              "stats": [
+                {
+                  "groupId": "EG000",
+                  "numEvents": 3,
+                  "numAffected": 2,
+                  "numAtRisk": 28
+                },
+                {
+                  "groupId": "EG001",
+                  "numEvents": 2,
+                  "numAffected": 2,
+                  "numAtRisk": 30
+                }
+              ]
+            },
+            {
+              "term": "Anxiety",
+              "organSystem": "Nervous system disorders",
+              "assessmentType": "SYSTEMATIC_ASSESSMENT",
+              "notes": "anxiety",
+              "stats": [
+                {
+                  "groupId": "EG000",
+                  "numEvents": 3,
+                  "numAffected": 2,
+                  "numAtRisk": 28
+                },
+                {
+                  "groupId": "EG001",
+                  "numEvents": 0,
+                  "numAffected": 0,
+                  "numAtRisk": 30
+                }
+              ]
+            },
+            {
+              "term": "Dizzyness",
+              "organSystem": "Nervous system disorders",
+              "assessmentType": "SYSTEMATIC_ASSESSMENT",
+              "notes": "dizziness self reported",
+              "stats": [
+                {
+                  "groupId": "EG000",
+                  "numEvents": 8,
+                  "numAffected": 3,
+                  "numAtRisk": 28
+                },
+                {
+                  "groupId": "EG001",
+                  "numEvents": 3,
+                  "numAffected": 2,
+                  "numAtRisk": 30
+                }
+              ]
+            },
+            {
+              "term": "Fatigue",
+              "organSystem": "Nervous system disorders",
+              "assessmentType": "SYSTEMATIC_ASSESSMENT",
+              "notes": "self reported fatigue NOS",
+              "stats": [
+                {
+                  "groupId": "EG000",
+                  "numEvents": 7,
+                  "numAffected": 4,
+                  "numAtRisk": 28
+                },
+                {
+                  "groupId": "EG001",
+                  "numEvents": 6,
+                  "numAffected": 3,
+                  "numAtRisk": 30
+                }
+              ]
+            },
+            {
+              "term": "Headache",
+              "organSystem": "Nervous system disorders",
+              "assessmentType": "SYSTEMATIC_ASSESSMENT",
+              "notes": "headache",
+              "stats": [
+                {
+                  "groupId": "EG000",
+                  "numEvents": 4,
+                  "numAffected": 3,
+                  "numAtRisk": 28
+                },
+                {
+                  "groupId": "EG001",
+                  "numEvents": 9,
+                  "numAffected": 5,
+                  "numAtRisk": 30
+                }
+              ]
+            },
+            {
+              "term": "Insomnia",
+              "organSystem": "Nervous system disorders",
+              "assessmentType": "SYSTEMATIC_ASSESSMENT",
+              "notes": "trouble sleeping",
+              "stats": [
+                {
+                  "groupId": "EG000",
+                  "numEvents": 5,
+                  "numAffected": 4,
+                  "numAtRisk": 28
+                },
+                {
+                  "groupId": "EG001",
+                  "numEvents": 5,
+                  "numAffected": 5,
+                  "numAtRisk": 30
+                }
+              ]
+            },
+            {
+              "term": "cough",
+              "organSystem": "Respiratory, thoracic and mediastinal disorders",
+              "assessmentType": "SYSTEMATIC_ASSESSMENT",
+              "notes": "Cough greater than baseline",
+              "stats": [
+                {
+                  "groupId": "EG000",
+                  "numEvents": 15,
+                  "numAffected": 7,
+                  "numAtRisk": 28
+                },
+                {
+                  "groupId": "EG001",
+                  "numEvents": 12,
+                  "numAffected": 10,
+                  "numAtRisk": 30
+                }
+              ]
+            },
+            {
+              "term": "Post-nasal drip",
+              "organSystem": "Respiratory, thoracic and mediastinal disorders",
+              "assessmentType": "SYSTEMATIC_ASSESSMENT",
+              "notes": "post-nasal discharge",
+              "stats": [
+                {
+                  "groupId": "EG000",
+                  "numEvents": 1,
+                  "numAffected": 1,
+                  "numAtRisk": 28
+                },
+                {
+                  "groupId": "EG001",
+                  "numEvents": 3,
+                  "numAffected": 3,
+                  "numAtRisk": 30
+                }
+              ]
+            },
+            {
+              "term": "Dyspnea",
+              "organSystem": "Respiratory, thoracic and mediastinal disorders",
+              "assessmentType": "SYSTEMATIC_ASSESSMENT",
+              "notes": "Shortness of breath greater than baseline not attributable to acute exacerbations, pneumonia, or causes other than idiopathic pulmonary fibrosis",
+              "stats": [
+                {
+                  "groupId": "EG000",
+                  "numEvents": 18,
+                  "numAffected": 8,
+                  "numAtRisk": 28
+                },
+                {
+                  "groupId": "EG001",
+                  "numEvents": 18,
+                  "numAffected": 5,
+                  "numAtRisk": 30
+                }
+              ]
+            },
+            {
+              "term": "dry eyes",
+              "organSystem": "Eye disorders",
+              "assessmentType": "SYSTEMATIC_ASSESSMENT",
+              "notes": "dry eyes, self-limited",
+              "stats": [
+                {
+                  "groupId": "EG000",
+                  "numEvents": 3,
+                  "numAffected": 2,
+                  "numAtRisk": 28
+                },
+                {
+                  "groupId": "EG001",
+                  "numEvents": 0,
+                  "numAffected": 0,
+                  "numAtRisk": 30
+                }
+              ]
+            },
+            {
+              "term": "Backache",
+              "organSystem": "Musculoskeletal and connective tissue disorders",
+              "assessmentType": "SYSTEMATIC_ASSESSMENT",
+              "notes": "back pain, self limited",
+              "stats": [
+                {
+                  "groupId": "EG000",
+                  "numEvents": 0,
+                  "numAffected": 0,
+                  "numAtRisk": 28
+                },
+                {
+                  "groupId": "EG001",
+                  "numEvents": 4,
+                  "numAffected": 4,
+                  "numAtRisk": 30
+                }
+              ]
+            },
+            {
+              "term": "Muscle pain",
+              "organSystem": "Musculoskeletal and connective tissue disorders",
+              "assessmentType": "SYSTEMATIC_ASSESSMENT",
+              "notes": "Muscle pain other than backache (self limited)",
+              "stats": [
+                {
+                  "groupId": "EG000",
+                  "numEvents": 2,
+                  "numAffected": 2,
+                  "numAtRisk": 28
+                },
+                {
+                  "groupId": "EG001",
+                  "numEvents": 1,
+                  "numAffected": 1,
+                  "numAtRisk": 30
+                }
+              ]
+            },
+            {
+              "term": "Joint stiffness",
+              "organSystem": "Musculoskeletal and connective tissue disorders",
+              "assessmentType": "SYSTEMATIC_ASSESSMENT",
+              "notes": "self limited joint stiffness",
+              "stats": [
+                {
+                  "groupId": "EG000",
+                  "numEvents": 2,
+                  "numAffected": 2,
+                  "numAtRisk": 28
+                },
+                {
+                  "groupId": "EG001",
+                  "numEvents": 0,
+                  "numAffected": 0,
+                  "numAtRisk": 30
+                }
+              ]
+            },
+            {
+              "term": "urinary tract infection",
+              "organSystem": "Renal and urinary disorders",
+              "assessmentType": "SYSTEMATIC_ASSESSMENT",
+              "notes": "urinary tract infection documented by culture or suspected",
+              "stats": [
+                {
+                  "groupId": "EG000",
+                  "numEvents": 1,
+                  "numAffected": 1,
+                  "numAtRisk": 28
+                },
+                {
+                  "groupId": "EG001",
+                  "numEvents": 4,
+                  "numAffected": 2,
+                  "numAtRisk": 30
+                }
+              ]
+            },
+            {
+              "term": "Tooth infection",
+              "organSystem": "Infections and infestations",
+              "assessmentType": "SYSTEMATIC_ASSESSMENT",
+              "notes": "tooth infection self-reported",
+              "stats": [
+                {
+                  "groupId": "EG000",
+                  "numEvents": 0,
+                  "numAffected": 0,
+                  "numAtRisk": 28
+                },
+                {
+                  "groupId": "EG001",
+                  "numEvents": 2,
+                  "numAffected": 2,
+                  "numAtRisk": 30
+                }
+              ]
+            }
+          ]
+        },
+        "moreInfoModule": {
+          "certainAgreement": {
+            "piSponsorEmployee": false,
+            "restrictiveAgreement": false
+          },
+          "pointOfContact": {
+            "title": "Steven R. Duncan, MD",
+            "organization": "University of Alabama at Birmingham",
+            "email": "duncsr19@uab.edu",
+            "phone": "(205) 934-5017"
+          }
+        }
+      },
+      "documentSection": {
+        "largeDocumentModule": {
+          "largeDocs": [
+            {
+              "typeAbbrev": "Prot_SAP",
+              "hasProtocol": true,
+              "hasSap": true,
+              "hasIcf": false,
+              "label": "Study Protocol and Statistical Analysis Plan",
+              "date": "2019-10-23",
+              "uploadDate": "2020-04-21T09:45",
+              "filename": "Prot_SAP_000.pdf",
+              "size": 8187125
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "miscInfoModule": {
+          "versionHolder": "2026-10-09"
+        },
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D005355",
+              "term": "Fibrosis"
+            }
+          ],
+          "ancestors": [
+            {
+              "id": "D010335",
+              "term": "Pathologic Processes"
+            },
+            {
+              "id": "D013568",
+              "term": "Pathological Conditions, Signs and Symptoms"
+            }
+          ]
+        },
+        "interventionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D000069283",
+              "term": "Rituximab"
+            }
+          ],
+          "ancestors": [
+            {
+              "id": "D058846",
+              "term": "Antibodies, Monoclonal, Murine-Derived"
+            },
+            {
+              "id": "D000911",
+              "term": "Antibodies, Monoclonal"
+            },
+            {
+              "id": "D000906",
+              "term": "Antibodies"
+            },
+            {
+              "id": "D007136",
+              "term": "Immunoglobulins"
+            },
+            {
+              "id": "D007162",
+              "term": "Immunoproteins"
+            },
+            {
+              "id": "D001798",
+              "term": "Blood Proteins"
+            },
+            {
+              "id": "D011506",
+              "term": "Proteins"
+            },
+            {
+              "id": "D000602",
+              "term": "Amino Acids, Peptides, and Proteins"
+            },
+            {
+              "id": "D012712",
+              "term": "Serum Globulins"
+            },
+            {
+              "id": "D005916",
+              "term": "Globulins"
+            }
+          ]
+        }
+      },
+      "hasResults": true
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT03360032",
+          "orgStudyIdInfo": {
+            "id": "222072"
+          },
+          "organization": {
+            "fullName": "University Hospitals Coventry and Warwickshire NHS Trust",
+            "class": "OTHER"
+          },
+          "briefTitle": "Comparing Measurements Made in an Incremental Shuttle Walk Test and a Cardiopulmonary Exercise Test in Patients With IPF",
+          "officialTitle": "A Comparative Assessment of Measurements Made in an Incremental Shuttle Walk Test and Incremental Cycle Ergometry Test in Patients With Idiopathic Pulmonary Fibrosis"
+        },
+        "statusModule": {
+          "statusVerifiedDate": "2019-09",
+          "overallStatus": "UNKNOWN",
+          "lastKnownStatus": "RECRUITING",
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "startDateStruct": {
+            "date": "2018-01-10",
+            "type": "ACTUAL"
+          },
+          "primaryCompletionDateStruct": {
+            "date": "2020-04",
+            "type": "ESTIMATED"
+          },
+          "completionDateStruct": {
+            "date": "2020-04",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2017-11-27",
+          "studyFirstSubmitQcDate": "2017-11-27",
+          "studyFirstPostDateStruct": {
+            "date": "2017-12-02",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2019-09-26",
+          "lastUpdatePostDateStruct": {
+            "date": "2019-09-27",
+            "type": "ACTUAL"
+          }
+        },
+        "sponsorCollaboratorsModule": {
+          "responsibleParty": {
+            "type": "SPONSOR"
+          },
+          "leadSponsor": {
+            "name": "University Hospitals Coventry and Warwickshire NHS Trust",
+            "class": "OTHER"
+          }
+        },
+        "oversightModule": {
+          "oversightHasDmc": false,
+          "isFdaRegulatedDrug": false,
+          "isFdaRegulatedDevice": false
+        },
+        "descriptionModule": {
+          "briefSummary": "Idiopathic pulmonary fibrosis (IPF) is a chronic and potentially fatal lung disease. As IPF progresses, patients become increasingly breathless with reduced exercise capacity and quality of life. A cardiopulmonary exercise test (CPET) is a gold standard way of assessing patients with IPF.\n\nAn incremental shuttle walk test is simpler, cheaper, more widely available and anecdotally preferable to CPET. The investigators will compare the measurements made in an ISWT and a CPET in patients with IPF . We aim to determine whether sufficient information can be gathered in an ISWT to negate the need to undertake CPET.",
+          "detailedDescription": "Idiopathic pulmonary fibrosis (IPF) is a chronic and potentially fatal lung disease. As IPF progresses, patients become increasingly breathless with reduced exercise capacity and quality of life. Average life expectancy is three years from diagnosis but IPF progresses at different rates in different people. In 2012 the British Lung Foundation estimated that 32,500 in the UK had IPF.\n\nAn accurate prognosis can help determine the most appropriate individual treatment option and allow patients and their families to make suitable plans. Currently, measurements from resting lung function tests are used to predict prognosis. However, measurement made during CPET are more sensitive survival predictors and CPET is the gold standard test to assess prognosis in IPF. A CPET test is relatively time-consuming and requires specialist equipment that is not universally available. CPET is not routinely used in clinical practice for the assessment of IPF.\n\nThe incremental shuttle walk test (ISWT) is quicker, cheaper and more widely available than CPET. This study builds on previous research done by the Respiratory team which showed a linear relationship between the distance walked in an ISWT and peak oxygen consumption during a CPET, a useful prognostic predictor, in patients with interstitial lung disease. 40-50 patients with IPF will be recruited and will undertake both ISWT and CPET at University Hospital, Coventry. The investigators will compare the results in the current cohort to those of the previous study.\n\nAdditionally, the research team will compare oxygen pressure in capillary blood at the end of an ISWT and a CPET. The investigators will also compare patient experience of the two tests using questionnaires. This study paves the way for a simple, standardised test to more accurately predict prognosis in IPF."
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Idiopathic Pulmonary Fibrosis"
+          ],
+          "keywords": [
+            "Incremental shuttle walk test",
+            "Cardiopulmonary exercise test",
+            "VO2 peak"
+          ]
+        },
+        "designModule": {
+          "studyType": "OBSERVATIONAL",
+          "patientRegistry": false,
+          "designInfo": {
+            "observationalModel": "COHORT",
+            "timePerspective": "PROSPECTIVE"
+          },
+          "enrollmentInfo": {
+            "count": 43,
+            "type": "ESTIMATED"
+          }
+        },
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "label": "All participants",
+              "description": "All patients will be asked to undertake an incremental shuttle walk test and a cardiopulmonary exercise test and the results will be compared."
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "VO2 peak",
+              "description": "Maximum oxygen consumption at peak exercise",
+              "timeFrame": "Measured and reported at time of test"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "measure": "PO2",
+              "description": "Oxygen pressure in capillary blood at peak exercise",
+              "timeFrame": "Measured and reported at time of test"
+            }
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Diagnosis of idiopathic pulmonary fibrosis confirmed by a multi-disciplinary team.\n* Aged 16 or over\n* Able to give informed consent to take part\n* Able to undertake both a cycle ergometry test and an incremental shuttle walk test without needing walking aids\n\nExclusion Criteria:\n\n* An inability to give informed consent.\n* Taking part in a research project with a potentially research-modifying intervention\n* Currently pregnant.\n* Currently breastfeeding.\n* Unable to perform an incremental shuttle walk test.\n* Unable to perform an incremental cycle ergometry test.\n* Unable to walk without an aid such as a stick or frame.",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "16 Years",
+          "maximumAge": "90 Years",
+          "stdAges": [
+            "CHILD",
+            "ADULT",
+            "OLDER_ADULT"
+          ],
+          "studyPopulation": "Adult patients with a confirmed diagnosis of idiopathic pulmonary fibrosis who are under the care of the Respiratory team at University Hospitals Coventry and Warwickshire NHS Trust.",
+          "samplingMethod": "NON_PROBABILITY_SAMPLE"
+        },
+        "contactsLocationsModule": {
+          "centralContacts": [
+            {
+              "name": "David Parr",
+              "role": "CONTACT",
+              "phone": "02476 967697",
+              "email": "david.parr@uhcw.nhs.uk"
+            }
+          ],
+          "overallOfficials": [
+            {
+              "name": "David Parr",
+              "affiliation": "University Hospitals Coventry and Warwickshire NHS Trust",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "locations": [
+            {
+              "facility": "University Hospital",
+              "status": "RECRUITING",
+              "city": "Coventry",
+              "state": "Warwickshire",
+              "zip": "CV2 2DX",
+              "country": "United Kingdom",
+              "contacts": [
+                {
+                  "name": "David Parr",
+                  "role": "CONTACT",
+                  "phone": "02476 967697",
+                  "email": "david.parr@uhcw.nhs.uk"
+                },
+                {
+                  "name": "David Parr",
+                  "role": "PRINCIPAL_INVESTIGATOR"
+                },
+                {
+                  "name": "Joanna Shakespeare",
+                  "role": "SUB_INVESTIGATOR"
+                },
+                {
+                  "name": "Elizabeth Dobson",
+                  "role": "SUB_INVESTIGATOR"
+                }
+              ],
+              "geoPoint": {
+                "lat": 52.40656,
+                "lon": -1.51217
+              }
+            }
+          ]
+        },
+        "ipdSharingStatementModule": {
+          "ipdSharing": "NO"
+        }
+      },
+      "documentSection": {
+        "largeDocumentModule": {
+          "largeDocs": [
+            {
+              "typeAbbrev": "Prot_SAP",
+              "hasProtocol": true,
+              "hasSap": true,
+              "hasIcf": false,
+              "label": "Study Protocol and Statistical Analysis Plan",
+              "date": "2017-11-16",
+              "uploadDate": "2017-11-23T12:53",
+              "filename": "Prot_SAP_000.pdf",
+              "size": 648234
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "miscInfoModule": {
+          "versionHolder": "2026-10-09"
+        },
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D054990",
+              "term": "Idiopathic Pulmonary Fibrosis"
+            }
+          ],
+          "ancestors": [
+            {
+              "id": "D011658",
+              "term": "Pulmonary Fibrosis"
+            },
+            {
+              "id": "D017563",
+              "term": "Lung Diseases, Interstitial"
+            },
+            {
+              "id": "D008171",
+              "term": "Lung Diseases"
+            },
+            {
+              "id": "D012140",
+              "term": "Respiratory Tract Diseases"
+            }
+          ]
+        }
+      },
+      "hasResults": false
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT04494334",
+          "orgStudyIdInfo": {
+            "id": "19SM5398"
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "239911",
+              "type": "OTHER",
+              "domain": "IRAS"
+            }
+          ],
+          "organization": {
+            "fullName": "Imperial College London",
+            "class": "OTHER"
+          },
+          "briefTitle": "Development of Airway Absorption Sampling Methods",
+          "officialTitle": "Development of Airway Absorption Sampling Methods for Biomarker Assessment in Probable Idiopathic Pulmonary Fibrosis (IPF) Patients",
+          "acronym": "FIBRO-SAM"
+        },
+        "statusModule": {
+          "statusVerifiedDate": "2023-09",
+          "overallStatus": "WITHDRAWN",
+          "whyStopped": "Study terminated by funder- terminated before CCC and recruitment- no recruitment and no data collection",
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "startDateStruct": {
+            "date": "2022-01-01",
+            "type": "ACTUAL"
+          },
+          "primaryCompletionDateStruct": {
+            "date": "2022-01-01",
+            "type": "ACTUAL"
+          },
+          "completionDateStruct": {
+            "date": "2022-01-01",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2020-06-09",
+          "studyFirstSubmitQcDate": "2020-07-29",
+          "studyFirstPostDateStruct": {
+            "date": "2020-07-31",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2023-09-13",
+          "lastUpdatePostDateStruct": {
+            "date": "2023-09-15",
+            "type": "ACTUAL"
+          }
+        },
+        "sponsorCollaboratorsModule": {
+          "responsibleParty": {
+            "type": "SPONSOR"
+          },
+          "leadSponsor": {
+            "name": "Imperial College London",
+            "class": "OTHER"
+          },
+          "collaborators": [
+            {
+              "name": "Genentech, Inc.",
+              "class": "INDUSTRY"
+            }
+          ]
+        },
+        "oversightModule": {
+          "oversightHasDmc": false,
+          "isFdaRegulatedDrug": false,
+          "isFdaRegulatedDevice": false
+        },
+        "descriptionModule": {
+          "briefSummary": "The study will measure airway inflammation in probable idiopathic pulmonary fibrosis (IPF) and sarcoidosis as well as in healthy volunteers. This can help understand the molecular basis of these diseases, why these diseases happen, and what makes patients develop lung fibrosis. These insights should one day help to monitor patients and aid in their diagnosis and treatment.",
+          "detailedDescription": "IPF is a progressive disease caused by irreversible scarring of the lung, and disease trajectory is not easily predicted based on clinical measurements. Biomarkers reflective of molecular pathways involved in IPF may help inform patient trajectory, but have been difficult to identify in circulation due to the disease manifesting in the lung. The study team will measure biomarkers from Probable IPF patients, sarcoidosis patients, and healthy volunteers using novel sampling methods involving absorption of upper and lower airway fluids. These novel sampling methods may enable less invasive and potentially more sensitive methods to detect disease activity and will be performed in IPF and sarcoidosis patients during a routine bronchoscopy procedure. The study team will compare the levels of biomarkers that have been shown to be predictive of disease course in airway fluids of probable IPF patients versus sarcoidosis and healthy controls. This study may help understand the molecular basis of IPF, and improve the understanding of diagnosis and treatment."
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Idiopathic Pulmonary Fibrosis",
+            "Sarcoidosis"
+          ]
+        },
+        "designModule": {
+          "studyType": "OBSERVATIONAL",
+          "patientRegistry": false,
+          "designInfo": {
+            "observationalModel": "COHORT",
+            "timePerspective": "CROSS_SECTIONAL"
+          },
+          "enrollmentInfo": {
+            "count": 0,
+            "type": "ACTUAL"
+          }
+        },
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "label": "Healthy Volunteers",
+              "description": "These will be age matched healthy volunteers (n=15) who will not undergo bronchoscopy"
+            },
+            {
+              "label": "Probable Idiopathic Pulmonary Fibrosis",
+              "description": "Patients with probable IPF, who will be having bronchoscopy as part of their clinical diagnostic work up",
+              "interventionNames": [
+                "Procedure: Bronchoscopy for Probable Idiopathic Pulmonary Fibrosis and Sarcoidosis"
+              ]
+            },
+            {
+              "label": "Sarcoidosis,",
+              "description": "Patients with sarcoidosis who will be having bronchoscopy as part of their clinical diagnostic work up",
+              "interventionNames": [
+                "Procedure: Bronchoscopy for Probable Idiopathic Pulmonary Fibrosis and Sarcoidosis"
+              ]
+            }
+          ],
+          "interventions": [
+            {
+              "type": "PROCEDURE",
+              "name": "Bronchoscopy for Probable Idiopathic Pulmonary Fibrosis and Sarcoidosis",
+              "description": "Blood samples and Nasosorption sampling",
+              "armGroupLabels": [
+                "Probable Idiopathic Pulmonary Fibrosis",
+                "Sarcoidosis,"
+              ]
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "Levels of the of biomarker/mediator surfactant protein D (SPD) in bronchial Lining fluid in IPF and sarcoidosis patients",
+              "description": "Comparisons will be made of bronchial lining fluid levels of biomarker/mediator surfactant protein D (SPD), in patients with IPF and sarcoidosis.",
+              "timeFrame": "Baseline Bronchoscopy visit"
+            },
+            {
+              "measure": "Levels of the biomarker/mediator CCL18 in bronchial Lining fluid in IPF and sarcoidosis patients.",
+              "description": "Comparisons will be made of bronchial lining fluid levels of biomarker/mediator CCL18 in patients with IPF and sarcoidosis",
+              "timeFrame": "Baseline Bronchoscopy visit"
+            },
+            {
+              "measure": "Levels of the biomarker/mediator CXCL13 in bronchial Lining fluid in IPF and sarcoidosis patients.",
+              "description": "Comparisons will be made of bronchial lining fluid levels of biomarker/mediator CXCL13 in patients with IPF and sarcoidosis.",
+              "timeFrame": "Baseline Bronchoscopy visit"
+            },
+            {
+              "measure": "Levels of the of biomarker/mediator periostin in bronchial Lining fluid in IPF and sarcoidosis patients.",
+              "description": "Comparisons will be made of bronchial lining fluid levels of biomarker/mediator periostin in patients with IPF and sarcoidosis.",
+              "timeFrame": "Baseline Bronchoscopy visit"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "measure": "Levels of Periostin in nasosorption samples within and across the 3 groups of participants",
+              "description": "Comparisons will be made of airways levels of biomarker/mediator periostin between patients with IPF and sarcoidosis and health volunteers.",
+              "timeFrame": "Through study completion, an average of 1 year"
+            },
+            {
+              "measure": "Levels of surfactant protein (SPD) in nasosorption samples within and across the 3 groups",
+              "description": "Comparisons will be made of airways levels of biomarker/mediator surfactant protein D (SPD) between patients with IPF and sarcoidosis and health volunteers.",
+              "timeFrame": "Through study completion, an average of 1 year"
+            },
+            {
+              "measure": "Levels of CCL18 in nasosorption samples within and across the 3 groups",
+              "description": "Comparisons will be made of airways levels of biomarker/mediator CCL18 between patients with IPF and sarcoidosis and health volunteers.",
+              "timeFrame": "Through study completion, an average of 1 year"
+            },
+            {
+              "measure": "Levels of CXCL13 in nasosorption samples within and across the 3 groups",
+              "description": "Comparisons will be made of airways levels of biomarker/mediator CXCL13 between patients with IPF and sarcoidosis and health volunteers.",
+              "timeFrame": "Through study completion, an average of 1 year"
+            },
+            {
+              "measure": "Levels of periostin in blood within and across the 3 groups of participants",
+              "description": "Comparison will be made of periostin levels in blood with nasosorption and bronchosorption levels across the 3 participant groups.",
+              "timeFrame": "Through study completion, an average of 1 year"
+            },
+            {
+              "measure": "Levels of surfactant protein D (SPD in blood within and across the 3 groups of participants",
+              "description": "Comparison will be made of surfactant protein D (SPD levels in blood with nasosorption and bronchosorption levels across the 3 participant groups",
+              "timeFrame": "Through study completion, an average of 1 year"
+            },
+            {
+              "measure": "Levels of CCL18 in blood within and across the 3 groups of participants",
+              "description": "Comparison will be made of CCL18 levels in blood with nasosorption and bronchosorption levels across the 3 participant groups.",
+              "timeFrame": "Through study completion, an average of 1 year"
+            },
+            {
+              "measure": "Levels of CXCL13 in blood within and across the 3 groups of participants",
+              "description": "Comparison will be made of CXCL13 levels in blood with nasosorption and bronchosorption levels across the 3 participant groups.",
+              "timeFrame": "Through study completion, an average of 1 year"
+            }
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Inclusion Criteria for Probable Idiopathic Pulmonary Fibrosis (IPF)\n* Adult male or female patients aged 40 to 85 years\n* Women of childbearing age should not be pregnant, planning to get pregnant or breast-feeding.\n* Command of the English language to be able to give informed consent.\n* Probable IPF requiring bronchoscopy to confirm the diagnosis, agreed within the local multi-disciplinary team (MDT).,according to the American Thoracic Society/European Respiratory Society/Japanese Respiratory Society/ American Latin Thoracic Association (ATS/ERS/JRS/ALAT) guidelines (2018) (3)\n* IPF disease diagnosis within the past 5 years\n* Usual Interstitial Pneumonia (UIP) on HRCT scan.\n* Recent lung function criteria:\n\n  * Forced vital capacity (FVC) \\>40% of predicted value.\n  * Carbon monoxide diffusing lung capacity (DLco) corrected for haemoglobin \\>30% of predicted value\n\nInclusion criteria for Sarcoidosis\n\n* Adult male or female patients aged 18 years and over\n* Women of childbearing age should not be pregnant, planning to get pregnant or breast-feeding.\n* Clinical symptoms, CT scan and biopsy diagnosis of sarcoidosis\n* Patients with lung parenchymal disease and pulmonary stage II or more\n* Recent lung function criteria\n\n  * FVC\\>50% predicted\n  * DLCO \\>40% predicted\n\nInclusion criteria for Healthy Volunteers\n\n* Age between 40 to 85 years, age and sex to match the group with IPF\n* Healthy subjects without any diseases that may cause inflammation\n* Women of childbearing age should not be pregnant, planning to get pregnant or breast-feeding.\n* Currently non-smokers: see exclusion criteria\n\nExclusion Criteria:Exclusion Criteria for probable IPF and Sarcoidosis Patients\n\nRespiratory Conditions other than IPF or sarcoidosis:\n\n* Confirmed diagnosis of occupational lung disease\n* Drug-induced lung disease or hypersensitivity pneumonitis\n* Lung and systemic autoimmune disease including connective tissue disease. Patients with an auto-immune profile considered diagnostic for a specific connective tissue disease will be excluded, even in the absence of systemic symptoms. Non-specific rises in auto antibodies e.g. rheumatoid factor; anti-nuclear antibody etc. will not be used to exclude individuals from the study.\n* Asbestosis or other asbestos related disease (pleural plaques, mesothelioma, asbestos pleural effusions)\n* Granulomatous lung disease.\n* Pulmonary artery hypertension (PAH) requiring a specific treatment.\n* Predominant chronic obstructive pulmonary disease (COPD) with forced expiratory volume in 1 second /forced vital capacity (FEV1/FVC) \\<0.70.\n* Patients with active tuberculosis or incompletely treated latent tuberculosis infection\n* Lung cancer\n* Upper respiratory tract infections in the past 6 weeks.\n\nSystemic Conditions\n\n* History of vasculitis, autoimmune or connective tissue disease\n* Known human immunodeficiency virus (HIV) or chronic viral hepatitis\n* Clinically significant diseases (other than IPF or sarcoidosis) that may alter respiratory biomarkers: including other respiratory, gastrointestinal, endocrine, haematological, cardiovascular, genitourinary, skin or neurological diseases.\n* Recent or ongoing malignant diseases.\n* Significant nasal anatomical defects preventing nasal sampling: including hypertrophy of turbinates, major septum deviation, nasal polyposis or recurrent sinusitis and nasal mucosal defects\n\nBronchoscopy Contraindications\n\nAny contra-indication to bronchoscopy as set out in British Thoracic Society guidelines (34)\n\nSmoking\n\nA detailed smoking history will be taken from all participants: to include total pack years, smoking in the past year, and smoking in the past 2 weeks.\n\nThe history will include cigarettes, pipe smoking, cigars, vaping, and shisha. Any form of smoking is not permitted within 2 weeks of bronchoscopy.\n\n5.4.2 Exclusion Criteria for Healthy Volunteers\n\n* Current inflammatory/ immunological conditions. Any clinically significant diseases that may alter respiratory biomarkers: including respiratory, gastrointestinal, endocrine, haematological, cardiovascular, genitourinary, skin or neurological diseases.\n* Recent or ongoing malignant diseases.\n* Significant nasal anatomical defects preventing nasal sampling: including hypertrophy of turbinates, major septum deviation, nasal polyposis or recurrent sinusitis and nasal mucosal defects\n* Upper respiratory tract infections in the past 6 weeks.\n* Cigarette smoking:\n\nno cigarettes in the last 2 weeks not more than 10 cigarettes in the past year \\<10 year lifetime pack history of smoking\n\n\\-",
+          "sex": "ALL",
+          "minimumAge": "40 Years",
+          "maximumAge": "85 Years",
+          "stdAges": [
+            "ADULT",
+            "OLDER_ADULT"
+          ],
+          "studyPopulation": "Patients diagnosed with probable IPF and Sarcoidosis will be included. Patients with probable IPF and Sarcoidosis will be selected from clinic lists for patients undergoing bronchoscopy as part of their clinical assessment, and they will be invited to participate in this study that involves additional sampling for clinical research purposes.\n\nProbable IPF patients must have Usual Interstitial Pneumonitis (UIP) on CT scan and will be sub classified by gas transfer (DLco corrected for haemoglobin as detailed below;\n\n* Mild (DLco\\>60)\n* Moderate (DLco 40-60)\n* Severe (DLco\\<40)\n\nHealthy volunteers (age/sex matched, non-smoking, without a clinical history of atopy).\n\nThe patient populations will include:\n\n* Probable Idiopathic Pulmonary Fibrosis (IPF), n=30\n* Sarcoidosis patients, n=15\n* Healthy Volunteers n=15",
+          "samplingMethod": "NON_PROBABILITY_SAMPLE"
+        },
+        "contactsLocationsModule": {
+          "overallOfficials": [
+            {
+              "name": "Melissa Wickremasinghe",
+              "affiliation": "Physician",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ]
+        },
+        "ipdSharingStatementModule": {
+          "ipdSharing": "NO"
+        }
+      },
+      "documentSection": {
+        "largeDocumentModule": {
+          "largeDocs": [
+            {
+              "typeAbbrev": "Prot_SAP",
+              "hasProtocol": true,
+              "hasSap": true,
+              "hasIcf": false,
+              "label": "Study Protocol and Statistical Analysis Plan",
+              "date": "2020-06-08",
+              "uploadDate": "2020-07-14T07:57",
+              "filename": "Prot_SAP_000.pdf",
+              "size": 1500560
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "miscInfoModule": {
+          "versionHolder": "2026-10-09"
+        },
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D054990",
+              "term": "Idiopathic Pulmonary Fibrosis"
+            },
+            {
+              "id": "D012507",
+              "term": "Sarcoidosis"
+            }
+          ],
+          "ancestors": [
+            {
+              "id": "D011658",
+              "term": "Pulmonary Fibrosis"
+            },
+            {
+              "id": "D017563",
+              "term": "Lung Diseases, Interstitial"
+            },
+            {
+              "id": "D008171",
+              "term": "Lung Diseases"
+            },
+            {
+              "id": "D012140",
+              "term": "Respiratory Tract Diseases"
+            },
+            {
+              "id": "D008232",
+              "term": "Lymphoproliferative Disorders"
+            },
+            {
+              "id": "D008206",
+              "term": "Lymphatic Diseases"
+            },
+            {
+              "id": "D006425",
+              "term": "Hemic and Lymphatic Diseases"
+            },
+            {
+              "id": "D006968",
+              "term": "Hypersensitivity, Delayed"
+            },
+            {
+              "id": "D006967",
+              "term": "Hypersensitivity"
+            },
+            {
+              "id": "D007154",
+              "term": "Immune System Diseases"
+            }
+          ]
+        },
+        "interventionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D001999",
+              "term": "Bronchoscopy"
+            }
+          ],
+          "ancestors": [
+            {
+              "id": "D003948",
+              "term": "Diagnostic Techniques, Respiratory System"
+            },
+            {
+              "id": "D019937",
+              "term": "Diagnostic Techniques and Procedures"
+            },
+            {
+              "id": "D003933",
+              "term": "Diagnosis"
+            },
+            {
+              "id": "D004724",
+              "term": "Endoscopy"
+            },
+            {
+              "id": "D003949",
+              "term": "Diagnostic Techniques, Surgical"
+            },
+            {
+              "id": "D019060",
+              "term": "Minimally Invasive Surgical Procedures"
+            },
+            {
+              "id": "D013514",
+              "term": "Surgical Procedures, Operative"
+            },
+            {
+              "id": "D013510",
+              "term": "Pulmonary Surgical Procedures"
+            },
+            {
+              "id": "D019616",
+              "term": "Thoracic Surgical Procedures"
+            }
+          ]
+        }
+      },
+      "hasResults": false
+    }
+  ]
+}
