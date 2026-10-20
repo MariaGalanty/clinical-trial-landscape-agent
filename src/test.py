@@ -1,5 +1,6 @@
 from status_handler import handle_status
 from router import route_trial
+from why_stopped_handler import handle_why_stopped_llm
 
 trial = {
     "nct_id": "NCT00000001",
@@ -74,3 +75,34 @@ def test_status_router_uses_fallback() -> None:
 
 test_status_router_uses_fallback()
 print("Fallback router test passed")
+
+
+def test_why_stopped_without_text() -> None:
+    # no why_stopped text, so no API call is made
+    evidence = handle_why_stopped_llm({"nct_id": "NCT00000007"})
+
+    assert evidence.status == "not_found"
+    assert evidence.question == "why_stopped"
+    assert evidence.category is None
+    assert evidence.answer == ""
+    assert evidence.handler == "why_stopped_llm_v1"
+
+
+def test_why_stopped_slow_recruitment() -> None:
+    # makes one real API call
+    evidence = handle_why_stopped_llm(
+        {
+            "nct_id": "NCT00000008",
+            "why_stopped": "Terminated due to slow recruitment",
+        }
+    )
+
+    assert evidence.status == "found"
+    assert evidence.category == "enrolment"
+    assert evidence.answer != ""
+    assert evidence.sources[0].reference == "why_stopped"
+
+
+test_why_stopped_without_text()
+test_why_stopped_slow_recruitment()
+print("why_stopped handler tests passed")
