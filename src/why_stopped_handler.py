@@ -6,7 +6,7 @@ from openai import OpenAI
 from evidence import WhyStoppedLabel, Evidence, Source
 
 MODEL = "gpt-5.4-nano"
-WHY_STOPPED_LLM_VERSION = "v1"
+WHY_STOPPED_LLM_VERSION = "v2"
 INSTRUCTIONS = """ You classify why a clinical trial was stopped, using the "why stopped"
 text from its ClinicalTrials.gov registry record.
 
@@ -29,6 +29,8 @@ Rules:
   They are not enrolment unless the text says recruitment problems caused the stop.
   Example: "Terminated by funder before recruitment started, no patients enrolled" is unclear,
   because the funder's reason is not stated.
+- Events outside the trial's control, such as a pandemic, are other.
+- "Business decision", "Company decision" or "Sponsor decision" with no reason given is unclear.
 """
 
 
@@ -92,7 +94,7 @@ def handle_why_stopped_llm(trial: dict[str, Any]) -> Evidence:
 if __name__ == "__main__":
     trials = [
         {"nct_id": "NCT_TEST_1"},  # no why_stopped, so no API call
-        {"nct_id": "NCT_TEST_2", "why_stopped": "Terminated due to slow recruitment"},
+        {"nct_id": "NCT_TEST_2", "why_stopped": "Company business decision"},
         {
             "nct_id": "NCT_TEST_3",
             "why_stopped": "Study terminated by funder- terminated before CCC and "

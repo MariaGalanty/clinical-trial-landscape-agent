@@ -7,7 +7,7 @@ from why_stopped_handler import WHY_STOPPED_LLM_VERSION
 
 
 if __name__ == "__main__":
-    TRIAL_LIMIT = 3  # None for no limit
+    TRIAL_LIMIT = None  # None for no limit
 
     # loads saved registery
     condition = "amyotrophic lateral sclerosis"
@@ -52,6 +52,8 @@ if __name__ == "__main__":
             "brief_title": trial["brief_title"],
             "overall_status": trial["overall_status"],
             "why_stopped": trial["why_stopped"],
+            "start_date": trial["start_date"],
+            "primary_completion_date": trial["primary_completion_date"],
         }
         record = {
             **registry_fields,
