@@ -6,7 +6,7 @@ from router import route_trial
 
 
 if __name__ == "__main__":
-    TRIAL_LIMIT = None  # None for no limit
+    TRIAL_LIMIT = 2  # None for no limit
 
     # loads saved registery
     condition = "amyotrophic lateral sclerosis"
@@ -26,7 +26,7 @@ if __name__ == "__main__":
     trials_to_run = stopped_trials[:TRIAL_LIMIT]
 
     # calls route_trial(trial, "why_stopped") for each and prints progress (3/56 NCT...)
-    why_stopped_evidences = []
+    classified_trials = []
     for trial in tqdm(trials_to_run, desc="Classifying why stopped", unit="trial"):
         evidence = route_trial(trial, "why_stopped")
         registry_fields = {
@@ -36,21 +36,19 @@ if __name__ == "__main__":
         }
         record = {
             **registry_fields,
-            **evidence.model_dump(),
-        }  # Evidence has .model_dump(), which turns it into a dict for json.dump.
-        why_stopped_evidences.append(record)
+            **evidence.model_dump(),  # Evidence has .model_dump(), which turns it into a dict for json.dump.
+        }
+        classified_trials.append(record)
         tqdm.write(str(evidence.nct_id))
 
     # saves the results to data/interim/als_why_stopped.json.
     interim_data_dir = project_root / "data" / "interim"
     output_data_path = (
         interim_data_dir
-        / f"{'_'.join(condition.lower().split())}_stopped_trials_classification.json"
+        / f"{'_'.join(condition.lower().split())}_why_stopped_trials_classification.json"
     )
 
     with output_data_path.open("w", encoding="utf-8") as file:
-        json.dump(why_stopped_evidences, file, indent=2, ensure_ascii=False)
+        json.dump(classified_trials, file, indent=2, ensure_ascii=False)
 
-    print(
-        f"Saved {len(why_stopped_evidences)} stopped drug trials to {output_data_path}"
-    )
+    print(f"Saved {len(classified_trials)} stopped drug trials to {output_data_path}")
