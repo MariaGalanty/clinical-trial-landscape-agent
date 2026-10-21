@@ -6,7 +6,7 @@ from openai import OpenAI
 from evidence import WhyStoppedLabel, Evidence, Source
 
 MODEL = "gpt-5.4-nano"
-
+WHY_STOPPED_LLM_VERSION = "v1"
 INSTRUCTIONS = """ You classify why a clinical trial was stopped, using the "why stopped"
 text from its ClinicalTrials.gov registry record.
 
@@ -82,7 +82,7 @@ def handle_why_stopped_llm(trial: dict[str, Any]) -> Evidence:
         category=category,
         sources=sources,
         status=status,
-        handler="why_stopped_llm_v1",
+        handler=f"why_stopped_llm_{WHY_STOPPED_LLM_VERSION}",
         n_tool_calls=0,  # LLM calls are not tool calls; PubMed searches will be
     )
 
