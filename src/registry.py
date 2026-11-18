@@ -78,6 +78,17 @@ def flatten_study(study: dict[str, Any]) -> dict[str, Any]:
             }
         )
 
+    references_module = protocol.get("referencesModule", {})
+    raw_references = references_module.get("references", [])
+
+    references = []
+
+    for reference in raw_references:
+        pmid = reference.get("pmid")
+        if not pmid:
+            continue
+        references.append({"pmid": pmid, "type": reference.get("type")})
+
     row = {
         "nct_id": identification.get("nctId"),
         "organization": identification.get("organization", {}).get("fullName"),
@@ -114,7 +125,7 @@ def flatten_study(study: dict[str, Any]) -> dict[str, Any]:
         "sampling_method": eligibility.get("samplingMethod"),
         "locations": protocol.get("contactsLocationsModule", {}).get("locations", []),
         "has_results": study.get("hasResults", False),
-        "linked_pmids": [],  # PubMed identifier
+        "references": references,  # PubMed IDs + type (BACKGROUND / RESULT / DERIVED)
     }
 
     return row
