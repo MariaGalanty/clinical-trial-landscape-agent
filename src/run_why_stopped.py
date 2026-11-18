@@ -3,7 +3,6 @@ from pathlib import Path
 from tqdm import tqdm
 
 from router import route_trial
-from why_stopped_handler import WHY_STOPPED_LLM_VERSION
 
 
 if __name__ == "__main__":
@@ -19,10 +18,12 @@ if __name__ == "__main__":
     with open(input_data_path, encoding="utf-8") as f:
         trial_registry = json.load(f)
 
+    # Resumable: trials already in this file are skipped. After changing the
+    # prompt, delete this file first, or the old answers are kept.
     interim_data_dir = project_root / "data" / "interim"
     output_data_path = (
         interim_data_dir
-        / f"{'_'.join(condition.lower().split())}_why_stopped_trials_classification_{WHY_STOPPED_LLM_VERSION}.json"
+        / f"{'_'.join(condition.lower().split())}_why_stopped_trials_classification.json"
     )
 
     # keep only the trials with why_stopped text

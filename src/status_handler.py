@@ -14,7 +14,7 @@ def handle_status(trial: dict[str, Any]) -> Evidence:
             category=None,
             sources=[],
             status="not_found",
-            handler="status_registry_v1",
+            handler="status_registry",
             n_tool_calls=0,
         )
     answer = f"The current status of the trial is {overall_status}"
@@ -25,7 +25,7 @@ def handle_status(trial: dict[str, Any]) -> Evidence:
         category=None,
         sources=[Source(kind="registry", reference="overall_status")],
         status="found",
-        handler="status_registry_v1",
+        handler="status_registry",
         n_tool_calls=0,
     )
     return status_evidence
@@ -41,6 +41,6 @@ def handle_status_fallback(trial: dict[str, Any]) -> Evidence:
         category=None,
         sources=[],
         status="not_found",
-        handler="status_fallback_v1",
+        handler="status_fallback",
         n_tool_calls=0,
     )

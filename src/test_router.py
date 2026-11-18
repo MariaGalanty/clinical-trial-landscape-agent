@@ -70,7 +70,9 @@ def test_run_chain_empty_list_raises() -> None:
 
 
 def test_status_route_found() -> None:
-    evidence = route_trial({"nct_id": "NCT00000010", "overall_status": "COMPLETED"}, "status")
+    evidence = route_trial(
+        {"nct_id": "NCT00000010", "overall_status": "COMPLETED"}, "status"
+    )
 
     assert evidence.status == "found"
     assert evidence.handler == "status_registry_v1"
@@ -86,10 +88,12 @@ def test_status_route_uses_fallback() -> None:
 def test_why_stopped_route_uses_why_stopped_chain() -> None:
     # no why_stopped text, so the handler returns early without an API call
     evidence = route_trial({"nct_id": "NCT00000012"}, "why_stopped")
-
-    assert evidence.question == "why_stopped"
-    assert evidence.status == "not_found"
-    assert evidence.handler == "why_stopped_llm_v1"
+    print(evidence)
+    assert evidence.question == "why_stopped", "question is not why stopped"
+    assert evidence.status == "not_found", "status is not not_found"
+    assert evidence.handler == f"why_stopped_llm_{WHY_STOPPED_LLM_VERSION}", (
+        "different why_stopped_llm version"
+    )
 
 
 def test_unsupported_question_raises() -> None:

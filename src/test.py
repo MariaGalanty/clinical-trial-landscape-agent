@@ -58,7 +58,7 @@ routed_missing = route_trial(
 
 assert routed_missing.status == "not_found"
 assert routed_missing.answer == ""
-# assert routed_missing.handler == "status_registry_v1"
+# assert routed_missing.handler == "status_registry"
 
 
 def test_status_router_uses_fallback() -> None:
@@ -70,7 +70,7 @@ def test_status_router_uses_fallback() -> None:
 
     assert evidence.status == "not_found"
     assert evidence.answer == ""
-    assert evidence.handler == "status_fallback_v1"
+    assert evidence.handler == "status_fallback"
 
 
 test_status_router_uses_fallback()
@@ -85,7 +85,7 @@ def test_why_stopped_without_text() -> None:
     assert evidence.question == "why_stopped"
     assert evidence.category is None
     assert evidence.answer == ""
-    assert evidence.handler == "why_stopped_llm_v1"
+    assert evidence.handler == "why_stopped_llm"
 
 
 def test_why_stopped_slow_recruitment() -> None:
