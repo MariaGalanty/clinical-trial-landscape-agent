@@ -1,0 +1,249 @@
+{
+  "created": "2026-11-19",
+  "seed": 42,
+  "snapshot": "als_studies_raw.json",
+  "dev": [
+    {
+      "nct_id": "NCT04569435",
+      "group": "completed",
+      "status": "COMPLETED",
+      "title": "Study of ANX005 in Adults With Amyotrophic Lateral Sclerosis (ALS)"
+    },
+    {
+      "nct_id": "NCT00424463",
+      "group": "completed",
+      "status": "COMPLETED",
+      "title": "Expanded Controlled Study of Safety and Efficacy of MCI-186 in Patients With Amyotrophic Lateral Sclerosis (ALS)"
+    },
+    {
+      "nct_id": "NCT00047723",
+      "group": "completed",
+      "status": "COMPLETED",
+      "title": "Minocycline to Treat Amyotrophic Lateral Sclerosis"
+    },
+    {
+      "nct_id": "NCT05795907",
+      "group": "completed",
+      "status": "COMPLETED",
+      "title": "Single & Multiple Ascending Dose Study of SAR443820 in Healthy Adult Participants"
+    },
+    {
+      "nct_id": "NCT01511029",
+      "group": "completed",
+      "status": "COMPLETED",
+      "title": "Study to Evaluate the QTC Interval in Healthy Volunteers Dosed With Dexpramipexole (QTC = Electrocardiogram (ECG) Interval Measured From the Onset of the QRS Complex to the End of the T Wave Corrected for Heart Rate)"
+    },
+    {
+      "nct_id": "NCT06249867",
+      "group": "ongoing_or_unknown",
+      "status": "RECRUITING",
+      "title": "A Study to Assess the Safety, Tolerability, and Pharmacology of Darifenacin in Patients With ALS"
+    },
+    {
+      "nct_id": "NCT01935518",
+      "group": "ongoing_or_unknown",
+      "status": "UNKNOWN",
+      "title": "A Clinical Trial of Safety and Efficacy of Fasudil in Subjects With Amyotrophic Lateral Sclerosis (ALS)"
+    },
+    {
+      "nct_id": "NCT01835782",
+      "group": "ongoing_or_unknown",
+      "status": "UNKNOWN",
+      "title": "Determining the Safety of L-serine in ALS"
+    },
+    {
+      "nct_id": "NCT03272503",
+      "group": "ongoing_or_unknown",
+      "status": "UNKNOWN",
+      "title": "A Clinical Trial of Pimozide in Patients With Amyotrophic Lateral Sclerosis (ALS)"
+    },
+    {
+      "nct_id": "NCT04667013",
+      "group": "ongoing_or_unknown",
+      "status": "NOT_YET_RECRUITING",
+      "title": "A Multiple Dose Study to Investigate Safety, Tolerability and Pharmacokinetics of TBN"
+    },
+    {
+      "nct_id": "NCT04428775",
+      "group": "stopped",
+      "status": "TERMINATED",
+      "title": "A Safety and Biomarker Study of ALZT-OP1a in Subjects With Mild-Moderate ALS Disease"
+    },
+    {
+      "nct_id": "NCT03757351",
+      "group": "stopped",
+      "status": "TERMINATED",
+      "title": "Study to Evaluate DNL747 in Subjects With Amyotrophic Lateral Sclerosis"
+    },
+    {
+      "nct_id": "NCT03068754",
+      "group": "stopped",
+      "status": "TERMINATED",
+      "title": "Study of Acthar® Gel (Acthar) for Amyotrophic Lateral Sclerosis (ALS)"
+    },
+    {
+      "nct_id": "NCT03843710",
+      "group": "stopped",
+      "status": "WITHDRAWN",
+      "title": "31P-MRS Imaging to Assess the Effects of CNM-Au8 on Impaired Neuronal Redox State in Amyotrophic Lateral Sclerosis (REPAIR-ALS)"
+    },
+    {
+      "nct_id": "NCT04569084",
+      "group": "stopped",
+      "status": "TERMINATED",
+      "title": "Efficacy and Safety Study of Oral Edaravone Administered in Subjects With ALS"
+    }
+  ],
+  "test": [
+    {
+      "nct_id": "NCT01281631",
+      "group": "completed",
+      "status": "COMPLETED",
+      "title": "A Study of NP001 in Subjects With Amyotrophic Lateral Sclerosis (ALS)"
+    },
+    {
+      "nct_id": "NCT01232738",
+      "group": "completed",
+      "status": "COMPLETED",
+      "title": "Trial of Safety and Efficacy of Rasagiline in Patients With Amyotrophic Lateral Sclerosis (ALS)"
+    },
+    {
+      "nct_id": "NCT00647296",
+      "group": "completed",
+      "status": "COMPLETED",
+      "title": "Safety and Tolerability Study of KNS-760704 in Amyotrophic Lateral Sclerosis (ALS)"
+    },
+    {
+      "nct_id": "NCT05740813",
+      "group": "completed",
+      "status": "COMPLETED",
+      "title": "HEALEY ALS Platform Trial - Regimen F ABBV-CLS-7262"
+    },
+    {
+      "nct_id": "NCT00409721",
+      "group": "completed",
+      "status": "COMPLETED",
+      "title": "The Effect of Memantine on Functional Outcomes and Motor Neuron Degeneration in Amyotrophic Lateral Sclerosis (ALS)"
+    },
+    {
+      "nct_id": "NCT04894240",
+      "group": "completed",
+      "status": "COMPLETED",
+      "title": "A Study of Monepantel in Individuals With Motor Neurone Disease"
+    },
+    {
+      "nct_id": "NCT03707795",
+      "group": "completed",
+      "status": "COMPLETED",
+      "title": "Treatment of FUS-Related ALS With Betamethasone - The TRANSLATE Study"
+    },
+    {
+      "nct_id": "NCT00353665",
+      "group": "completed",
+      "status": "COMPLETED",
+      "title": "Memantine for Disability in Amyotrophic Lateral Sclerosis (MEDALS)"
+    },
+    {
+      "nct_id": "NCT04204889",
+      "group": "completed",
+      "status": "COMPLETED",
+      "title": "Trial of Oxaloacetate in ALS"
+    },
+    {
+      "nct_id": "NCT04849065",
+      "group": "ongoing_or_unknown",
+      "status": "UNKNOWN",
+      "title": "Clinical Trial on the Use of Cell Therapy in the Treatment of Patients With Amyotrophic Lateral Sclerosis"
+    },
+    {
+      "nct_id": "NCT06598202",
+      "group": "ongoing_or_unknown",
+      "status": "UNKNOWN",
+      "title": "Exploring Nasal Drop Therapy With Small Extracellular Vesicles for ALS"
+    },
+    {
+      "nct_id": "NCT07023835",
+      "group": "ongoing_or_unknown",
+      "status": "RECRUITING",
+      "title": "Usnoflast Neuromuscular Investigation for Treatment Efficacy in Amyotrophic Lateral Sclerosis"
+    },
+    {
+      "nct_id": "NCT06765564",
+      "group": "ongoing_or_unknown",
+      "status": "RECRUITING",
+      "title": "Clinical Study of Induced Pluripotent Stem Cells Derived Motor Neuron Precursor Cell Therapy for Amyotrophic Lateral Sclerosis (ALS)"
+    },
+    {
+      "nct_id": "NCT04518540",
+      "group": "ongoing_or_unknown",
+      "status": "UNKNOWN",
+      "title": "Explore Neuroprotective Effect of Lipoic Acid in Amyotrophic Lateral Sclerosis"
+    },
+    {
+      "nct_id": "NCT07204977",
+      "group": "ongoing_or_unknown",
+      "status": "RECRUITING",
+      "title": "Acamprosate in C9orf72 Hexanucleotide Repeat Expansion Amyotrophic Lateral Sclerosis (ACALS)"
+    },
+    {
+      "nct_id": "NCT07100119",
+      "group": "ongoing_or_unknown",
+      "status": "RECRUITING",
+      "title": "A Study of LY4256984 in Participants With Sporadic Amyotrophic Lateral Sclerosis"
+    },
+    {
+      "nct_id": "NCT07174492",
+      "group": "ongoing_or_unknown",
+      "status": "NOT_YET_RECRUITING",
+      "title": "Efficacy and Safety of Masitinib in Combination With SoC Versus Placebo in the Treatment of ALS Patients"
+    },
+    {
+      "nct_id": "NCT03338114",
+      "group": "stopped",
+      "status": "WITHDRAWN",
+      "title": "Study to Evaluate the Safety & Efficacy of FLX-787-ODT to Treat Fasciculations in Tongue and Upper or Lower Extremity Muscles Most Affected in Subjects With ALS"
+    },
+    {
+      "nct_id": "NCT00231140",
+      "group": "stopped",
+      "status": "TERMINATED",
+      "title": "Pilot-Study of Thalidomide in Amyotrophic Lateral Sclerosis (ALS)"
+    },
+    {
+      "nct_id": "NCT05442775",
+      "group": "stopped",
+      "status": "TERMINATED",
+      "title": "A Phase 3, Open-Label Extension of COURAGE-ALS (CY 5031)"
+    },
+    {
+      "nct_id": "NCT02405403",
+      "group": "stopped",
+      "status": "WITHDRAWN",
+      "title": "Microglial Activation Role In ALS (MARIA)"
+    },
+    {
+      "nct_id": "NCT05151471",
+      "group": "stopped",
+      "status": "TERMINATED",
+      "title": "Efficacy and Safety Extension Study of Oral Edaravone Administered in Subjects With ALS"
+    },
+    {
+      "nct_id": "NCT03836716",
+      "group": "stopped",
+      "status": "TERMINATED",
+      "title": "Arimoclomol in Amyotropic Lateral Sclerosis - Open Label Extension Trial"
+    },
+    {
+      "nct_id": "NCT03613571",
+      "group": "stopped",
+      "status": "TERMINATED",
+      "title": "A Study to Evaluate the Safety, Tolerability and Efficacy of ILB in Patients With Amyotrophic Lateral Sclerosis"
+    },
+    {
+      "nct_id": "NCT05949294",
+      "group": "stopped",
+      "status": "WITHDRAWN",
+      "title": "Study of AROSOD-1 in Adult Participants With Amyotrophic Lateral Sclerosis (ALS)"
+    }
+  ]
+}

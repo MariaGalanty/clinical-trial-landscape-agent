@@ -2,10 +2,16 @@ import os
 import json
 import time
 import xml.etree.ElementTree as ET
+from pathlib import Path
 
 from dotenv import load_dotenv, find_dotenv
 from urllib.parse import urlencode
 from urllib.request import urlopen
+from urllib.error import HTTPError
+
+
+CACHE_DIR = Path(__file__).resolve().parent.parent / "data" / "raw" / "pubmed"
+MAX_RETRIES = 5
 
 
 def _eutils_get(program: str, own_params: dict) -> bytes:
@@ -28,11 +34,22 @@ def _eutils_get(program: str, own_params: dict) -> bytes:
     url_path = (
         f"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/{program}.fcgi?{query_string}"
     )
-    time.sleep(0.34)
 
-    with urlopen(url_path) as response:
-        response_bytes = response.read()
-    return response_bytes
+    for attempt in range(MAX_RETRIES):
+        time.sleep(0.34)
+        try:
+            with urlopen(url_path) as response:
+                return response.read()
+        except HTTPError as e:
+            # 429 = too many requests, 5xx = server problem: worth retrying.
+            # Other 4xx = our request is wrong: retrying won't help.
+            if e.code != 429 and e.code < 500:
+                raise
+            if attempt == MAX_RETRIES - 1:
+                raise
+            wait = 2**attempt  # 1s, 2s, 4s...
+            print(f"NCBI returned {e.code}, retrying in {wait}s")
+            time.sleep(wait)
 
 
 def search_pubmed(query: str, max_results: int = 5) -> list[str]:
@@ -46,12 +63,10 @@ def search_pubmed(query: str, max_results: int = 5) -> list[str]:
     response_bytes = _eutils_get("esearch", params)
     data = json.loads(response_bytes)
     matched_pmids = data["esearchresult"]["idlist"]
-
     return matched_pmids
 
 
 def fetch_abstract(pmid: str) -> dict[str, str]:
-
     params = {
         "id": pmid,
         "retmode": "xml",
@@ -82,6 +97,31 @@ def parse_abstract_xml(pmid: str, xml_text: str) -> dict[str, str]:
     abstract = "\n".join(abstract_parts)
 
     return {"pmid": pmid, "title": article_title, "abstract": abstract}
+
+
+def fetch_abstract_cached(pmid: str) -> dict[str, str]:
+    """fetch abstract, but read from disk if this PMID was fetched before."""
+    path = CACHE_DIR / "abstracts" / f"{pmid}.json"
+    if path.is_file():
+        return json.loads(path.read_text(encoding="utf-8"))
+    abstract = fetch_abstract(pmid)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(abstract, ensure_ascii=False), encoding="utf-8")
+    return abstract
+
+
+def search_pubmed_cached(
+    query: str, max_results: int = 5, refresh: bool = False
+) -> list[str]:
+    """search_pubmed, cached on disk. refresh=True ignores the cache and searches again."""
+    # only safe for NCT IDs - switch to a hash before searching free text
+    path = CACHE_DIR / "searches" / f"{query}_{max_results}.json"
+    if path.is_file() and not refresh:
+        return json.loads(path.read_text(encoding="utf-8"))
+    pmids = search_pubmed(query, max_results)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(pmids), encoding="utf-8")
+    return pmids
 
 
 if __name__ == "__main__":
