@@ -6,7 +6,7 @@ from typing import Literal
 from pydantic import BaseModel, Field
 
 SourceKind = Literal["registry", "pubmed", "web"]
-SourceRole = Literal["this_trial_info", "background_info"]
+SourceRole = Literal["trial_info", "background_info"]
 Topic = Literal["stop_reason", "results", "progress", "design"]
 StopCategory = Literal[
     "efficacy_futility", "safety", "business_strategic", "enrolment", "other", "unclear"
