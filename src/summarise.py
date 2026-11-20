@@ -6,7 +6,7 @@ from dotenv import find_dotenv, load_dotenv
 from openai import OpenAI
 
 from llm_log import logged_call
-from schemas import Claim, Source, Status, SummariserOutput, TrialSummary
+from schemas import ClaimSourceValidated, Source, Status, SummariserOutput, TrialSummary
 
 MODEL = "gpt-5.4"
 REASONING_EFFORT = "low"
@@ -69,15 +69,15 @@ def build_sources(row: dict, abstracts: list[dict]) -> tuple[str, list[Source]]:
 
 def check_citations(
     output: SummariserOutput, sources: list[Source]
-) -> tuple[list[Claim], Status]:
-    """Turn untrusted ClaimOut into trusted Claim. Any unknown source -> invalid_citation."""
+) -> tuple[list[ClaimSourceValidated], Status]:
+    """Turn untrusted Claim into trusted ClaimSourceValidated. Any unknown source -> invalid_citation."""
     by_ref = {s.reference: s for s in sources}
     claims = []
     for c in output.claims:
         if not c.source_refs or any(ref not in by_ref for ref in c.source_refs):
             return [], "invalid_citation"
         claims.append(
-            Claim(
+            ClaimSourceValidated(
                 text=c.text, topic=c.topic, sources=[by_ref[r] for r in c.source_refs]
             )
         )

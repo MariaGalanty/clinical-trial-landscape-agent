@@ -6,16 +6,41 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Callable
 
-LOG_PATH = Path(__file__).resolve().parent.parent / "data" / "interim" / "llm_log.jsonl"
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+LOG_PATH = PROJECT_ROOT / "data" / "interim" / "llm_log.jsonl"
 
-# USD per 1M tokens. Copy from each provider's pricing page; prices change.
-# Checked: 2026-11-19
-PRICES: dict[str, dict[str, float]] = {
-    # OpenAI, https://openai.com/api/pricing - fill in before running:
-    # "gpt-5.4-nano": {"input": ..., "cached_input": ..., "output": ...},
-    "claude-sonnet-5-5": {"input": 2.00, "cached_input": 0.10, "output": 10.00},
-    "claude-haiku-5-5": {"input": 0.10, "output": 0.50},  # prompts up to 100K tokens
-}
+# Dated snapshot of LiteLLM's price list (scripts/update_llm_prices.py).
+# A fixed file, not "latest": the same run always gives the same cost.
+PRICES_FILE = PROJECT_ROOT / "config" / "model_prices_2026-11-19.json"
+
+# Overrides for models missing from the snapshot or priced differently. USD per 1M tokens.
+MANUAL_PRICES: dict[str, dict[str, float]] = {}
+
+
+def load_prices(path: Path) -> dict[str, dict[str, float]]:
+    """LiteLLM file (USD per token) -> {model: {input, cached_input, output}} in USD per 1M tokens."""
+    raw = json.loads(path.read_text(encoding="utf-8"))
+    prices = {}
+    for model, entry in raw.items():
+        if "input_cost_per_token" not in entry or "output_cost_per_token" not in entry:
+            continue  # e.g. embedding or image models
+        p = {
+            "input": round(entry["input_cost_per_token"] * 1_000_000, 6),
+            "output": round(entry["output_cost_per_token"] * 1_000_000, 6),
+        }
+        if "cache_read_input_token_cost" in entry:
+            p["cached_input"] = round(
+                entry["cache_read_input_token_cost"] * 1_000_000, 6
+            )
+        if "cache_creation_input_token_cost" in entry:  # Anthropic cache writes
+            p["cache_write"] = round(
+                entry["cache_creation_input_token_cost"] * 1_000_000, 6
+            )
+        prices[model] = p
+    return prices
+
+
+PRICES = {**load_prices(PRICES_FILE), **MANUAL_PRICES}  # manual wins
 
 
 def normalize_usage(provider: str, response: Any) -> dict[str, int | None]:

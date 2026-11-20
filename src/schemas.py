@@ -21,10 +21,10 @@ class Source(BaseModel):
     role: SourceRole
 
 
-class Claim(BaseModel):
+class ClaimSourceValidated(BaseModel):
     """One claim that passed the citation check (trusted).
 
-    Built by code from a ClaimOut: every source here was really fetched in this
+    Built by code from a Claim: every source here was really fetched in this
     run. A claim must have at least one source. This is what gets stored in
     TrialSummary and written to the landscape files.
     """
@@ -37,7 +37,7 @@ class Claim(BaseModel):
 # --- What the LLM returns (kept small: output tokens are the expensive ones) ---
 
 
-class ClaimOut(BaseModel):
+class Claim(BaseModel):
     """One claim as returned by the LLM (untrusted).
 
     source_refs are the labels the LLM copied from the prompt, e.g. "34536404"
@@ -52,7 +52,7 @@ class ClaimOut(BaseModel):
 
 class SummariserOutput(BaseModel):
     stop_category: StopCategory | None
-    claims: list[ClaimOut]
+    claims: list[Claim]
 
 
 # ------ The full record, assembled by code ---
@@ -76,7 +76,7 @@ class TrialSummary(BaseModel):
         None  # ONE label, stopped trials only: "safety", "enrolment", ...
     )
     claims: list[
-        Claim
+        ClaimSourceValidated
     ] = []  # THE SUMMARY: all sentences, any topic (results, stop_reason, progress, design)
     sources_fetched: list[Source] = []  # everything that was fetched, cited or not
 

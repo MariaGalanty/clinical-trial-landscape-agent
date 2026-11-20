@@ -7,7 +7,7 @@ from pathlib import Path
 from llm_log import LOG_PATH
 from pubmed import fetch_abstract_cached, search_pubmed_cached
 from registry import flatten_study
-from schemas import ClaimOut, Source, SummariserOutput
+from schemas import Claim, Source, SummariserOutput
 from summarise import check_citations, summarise_trial
 
 N_REAL_TRIALS = 10
@@ -27,7 +27,7 @@ sources = [
 def fake_output(refs: list[str]) -> SummariserOutput:
     return SummariserOutput(
         stop_category=None,
-        claims=[ClaimOut(text="A claim.", topic="results", source_refs=refs)],
+        claims=[Claim(text="A claim.", topic="results", source_refs=refs)],
     )
 
 

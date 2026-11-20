@@ -1,9 +1,9 @@
 from datetime import datetime, timezone
 from pydantic import ValidationError
-from schemas import Claim, Source, TrialSummary
+from schemas import ClaimSourceValidated, Source, TrialSummary
 
 src = Source(kind="pubmed", reference="34536404", title="...", role="trial_info")
-claim = Claim(
+claim = ClaimSourceValidated(
     text="The trial did not meet its primary endpoint.", topic="results", sources=[src]
 )
 
@@ -26,7 +26,9 @@ record = TrialSummary(
 print("valid record OK")
 
 try:
-    Claim(text="Unsupported claim.", topic="results", sources=[])
+    claim_2 = ClaimSourceValidated(
+        text="Unsupported claim.", topic="results", sources=[]
+    )
     print("FAIL: claim without source was accepted")
 except ValidationError:
     print("claim without source rejected OK")
