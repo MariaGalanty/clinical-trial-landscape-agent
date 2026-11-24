@@ -5,9 +5,12 @@ description = "Evidence-grounded clinical trial landscape for a disease, with ci
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "langchain-openai>=1.8.5",
+    "langgraph>=1.2.24",
     "openai>=3.31.0",
     "pydantic>=2.14.1",
     "python-dotenv>=1.1.1",
+    "tavily-python>=0.8.5",
     "tqdm>=4.70.1",
 ]
 

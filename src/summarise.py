@@ -7,6 +7,7 @@ from openai import OpenAI
 
 from llm_log import logged_call
 from schemas import ClaimSourceValidated, Source, Status, SummariserOutput, TrialSummary
+from pubmed import fetch_abstract_cached, search_pubmed_cached
 
 MODEL = "gpt-5.4"
 REASONING_EFFORT = "low"
@@ -29,7 +30,9 @@ Rules:
 - Every claim lists the labels of the sources that support it in source_refs,
   without the brackets (e.g. "34536404", "registry:why_stopped").
 - A paper may be about a different trial (e.g. an earlier phase of the same drug).
-  Only use a paper if it is clearly about THIS trial. Otherwise ignore it.
+  Only use a paper if it is clearly about THIS trial, or if its results affected
+  this trial (e.g. an open-label extension stopped because the parent trial did
+  not meet its primary endpoint). Otherwise ignore it.
 - If the sources say nothing about the outcome, return no claims.
 - stop_category: only for TERMINATED, WITHDRAWN or SUSPENDED trials; otherwise null.
 """
@@ -102,6 +105,24 @@ def registry_part(row: dict, run_id: str) -> dict:
         "searched_at": datetime.now(timezone.utc),
         "run_id": run_id,
     }
+
+
+TRIAL_REF_TYPES = (
+    "RESULT",
+    "DERIVED",
+)  # registry reference types that are about this trial
+
+
+def gather_abstracts(row: dict) -> list[dict]:
+    """Fixed source gathering, no LLM: registry-linked papers + PubMed search by NCT ID."""
+    linked = [
+        r["pmid"]
+        for r in row["references"]
+        if r["type"] in TRIAL_REF_TYPES and r.get("pmid")
+    ]
+    searched = search_pubmed_cached(row["nct_id"])
+    pmids = list(dict.fromkeys(linked + searched))  # merge, drop duplicates, keep order
+    return [fetch_abstract_cached(p) for p in pmids]
 
 
 def summarise_trial(row: dict, abstracts: list[dict], run_id: str) -> TrialSummary:
