@@ -181,3 +181,27 @@ for nct_id in pick_nct_ids():
         print(f"\n{nct_id} is not in the ALS snapshot - skipped")
         continue
     results.append(inspect(nct_id))
+
+from registry import flatten_study
+
+split = json.loads(
+    Path(project_root / "eval/eval_split.json").read_text(encoding="utf-8")
+)
+studies = json.loads(
+    Path(project_root / "data/raw/als_studies_raw.json").read_text(encoding="utf-8")
+)
+rows_by_id = {r["nct_id"]: r for r in (flatten_study(st) for st in studies)}
+
+for name in ("dev", "test"):
+    print(f"\n{name} ({len(split[name])} trials)")
+    for e in split[name]:
+        row = rows_by_id[e["nct_id"]]
+        phases = "/".join(row["phases"] or []) or "-"
+        print(f"  {e['nct_id']}  {e['status']:<20} {phases}")
+        print(f"{e['title']}")
+        refs = row["references"]
+        refs_text = ", ".join(
+            f"{r['pmid']} ({r['type']})" for r in refs if r.get("pmid")
+        )
+        print(f"      registry PMIDs: {refs_text or '-'}")
+        print("-" * 60)
