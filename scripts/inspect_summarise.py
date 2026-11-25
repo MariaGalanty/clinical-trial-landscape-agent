@@ -147,7 +147,7 @@ def inspect(nct_id: str) -> dict:
 
     # 5. Citation check (code)
     step(5, "check_citations")
-    claims, status = s.check_citations(output, sources)
+    claims, status, dropped = s.check_citations(output, sources)
     print(f"  status: {status} | claims kept: {len(claims)} of {len(output.claims)}")
 
     # 6. The record that would be saved
@@ -158,6 +158,7 @@ def inspect(nct_id: str) -> dict:
         claims=claims,
         sources_fetched=sources,
         status=status,
+        dropped_claims=dropped,
         handler=s.HANDLER,
     )
     print(summary.model_dump_json(indent=2, exclude={"sources_fetched"}))

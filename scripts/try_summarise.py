@@ -31,15 +31,15 @@ def fake_output(refs: list[str]) -> SummariserOutput:
     )
 
 
-_, status = check_citations(fake_output(["34536404"]), sources)
+_, status, _ = check_citations(fake_output(["34536404"]), sources)
 assert status == "found", status
-_, status = check_citations(fake_output(["99999999"]), sources)  # invented PMID
+_, status, _ = check_citations(fake_output(["99999999"]), sources)  # invented PMID
 assert status == "invalid_citation", status
-_, status = check_citations(
+_, status, _ = check_citations(
     fake_output(["registry:why_stopped"]), sources
 )  # registry only
 assert status == "not_found", status
-_, status = check_citations(fake_output([]), sources)  # no source at all
+_, status, _ = check_citations(fake_output([]), sources)  # no source at all
 assert status == "invalid_citation", status
 print("Offline citation-check tests: OK\n")
 

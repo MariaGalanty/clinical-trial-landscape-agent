@@ -1,5 +1,6 @@
 """Search agent (LangGraph): runs only on trials the summariser left not_found.
-The model chooses the tools; code enforces the limit and checks the citations."""
+Code runs the web search (fixed query per trial status); the model chooses which
+result pages to read and when to stop. Code enforces the limit and checks the citations."""
 
 from typing import Annotated, TypedDict
 
@@ -9,7 +10,6 @@ from langchain_openai import ChatOpenAI
 from langgraph.graph import END, START, StateGraph
 from langgraph.graph.message import add_messages
 
-import pubmed
 import web
 from llm_log import logged_call
 from schemas import Source, SummariserOutput, TrialSummary
@@ -23,41 +23,93 @@ from summarise import (
 )
 
 MAX_TOOL_CALLS = 5
-PAGE_CHARS = 6000
-HANDLER = f"agent_v1_{REASONING_EFFORT}"
+PAGE_CHARS = 20000
+HANDLER = f"trial_agent_v5_{REASONING_EFFORT}"  # v5: URL gate, only bad claims dropped
 
 AGENT_INSTRUCTIONS = (
     INSTRUCTIONS
     + """
-The sources below did not answer what happened to this trial. Use the tools to
-find more. You have at most 5 tool calls.
-- Search results show only titles and snippets. Fetch a page or abstract before
-  using it: only fetched sources can be cited, by their URL or PMID label.
-- Start from the trial's identifiers: NCT number, drug name, acronym, ALS.
-  Press releases often say "discontinued", "halted" or "did not meet its
-  primary endpoint" instead of "terminated".
-- Stop when the fetched sources answer the question, or when more searching is
-  unlikely to help. Returning no claims is a valid answer.
+    The sources below did not answer what happened to this trial. Web search results
+    for the trial are listed at the end. You can read pages with fetch_page; you have
+    at most 5 fetches.
+
+    What you are looking for, depending on [registry:overall_status]:
+    - COMPLETED: the results. Did the trial meet its primary endpoint? Key efficacy
+    and safety findings. Was the drug developed further or dropped?
+    - TERMINATED, WITHDRAWN, SUSPENDED: why the trial stopped (safety, lack of
+    efficacy, business decision, slow enrolment ...), and any results before it
+    stopped.
+    - RECRUITING and other ongoing statuses: progress, e.g. enrolment, interim
+    results or expected dates.
+    - UNKNOWN: whether it finished or stopped, and any results.
+
+    How to search the pages:
+    - Fetch the pages most likely to answer this: news articles, company press
+    releases, conference abstracts. Skip pages that only list the trial.
+    - Use a fetched page only if it is about THIS trial: it names the NCT number,
+    or its drug, disease, phase and design match the registry record.
+    - Stop when the fetched pages answer the question, or when no remaining result
+    looks useful. Returning no claims is a valid answer.
+
+    How to report:
+    - Report what each usable page says, with its context: the date, whether the
+    data are preliminary or final, and how many patients they cover (e.g. "In
+    January 2023, preliminary data from 8 patients showed ...").
+    - If usable pages disagree, report both claims, each with its context, so the
+    reader can see what changed (e.g. preliminary results vs. final results).
+    - Preliminary, interim and secondary-endpoint results count as outcomes, as
+    long as you say what they are.
+    - Cite a page by its exact URL, copied from its [label]. Only fetched pages
+    can be cited. Search snippets are not evidence: do not cite them, and do not
+    drop a finding from a fetched page because a snippet says something else.
 """
 )
+
+
+# ---- Web search: run by code, not by the model. Query = <NCT> ALS <state> ----
+
+STOPPED = {"TERMINATED", "WITHDRAWN", "SUSPENDED"}
+ONGOING = {
+    "RECRUITING",
+    "ACTIVE_NOT_RECRUITING",
+    "ENROLLING_BY_INVITATION",
+    "NOT_YET_RECRUITING",
+}
+
+
+def web_queries(row: dict) -> list[str]:
+    """One query per trial; UNKNOWN status gets both 'results' and 'stopped'."""
+    status = row["overall_status"]
+    if status in STOPPED:
+        states = ["stopped"]
+    elif status == "COMPLETED":
+        states = ["results"]
+    elif status in ONGOING:
+        states = ["recruiting"]
+    else:  # UNKNOWN, or a status we have not seen
+        states = ["results", "stopped"]
+    return [f"{row['nct_id']} ALS {s}" for s in states]
+
+
+def search_results_text(row: dict) -> str:
+    """Search results as text for the model (URL, title, short snippet) + their URLs,
+    the only pages the agent may fetch."""
+    lines, urls = [], []
+    for query in web_queries(row):
+        print(f"  web search: {query}")
+        lines.append(f"Web search: {query}")
+        for r in web.web_search(query):
+            lines.append(f"- {r['url']} | {r['title']}\n  {r['content'][:300]}")
+            urls.append(r["url"])
+    return "\n".join(lines), urls
 
 
 # ---- Tools. Each returns (text for the model, Source if something citable was fetched) ----
 
 
 @tool(response_format="content_and_artifact")
-def web_search(query: str) -> tuple[str, None]:
-    """Search the web. Returns URLs, titles and short snippets."""
-    results = web.web_search(query)
-    text = "\n".join(
-        f"- {r['url']} | {r['title']}\n  {r['content'][:300]}" for r in results
-    )
-    return text or "No results.", None
-
-
-@tool(response_format="content_and_artifact")
 def fetch_page(url: str) -> tuple[str, Source | None]:
-    """Read a web page found with web_search. It can then be cited by its URL."""
+    """Read a web page from the search results. It can then be cited by its URL."""
     text = web.fetch_page(url)[:PAGE_CHARS]
     if not text:
         return "Could not read this page.", None
@@ -66,25 +118,7 @@ def fetch_page(url: str) -> tuple[str, Source | None]:
     )
 
 
-@tool(response_format="content_and_artifact")
-def search_pubmed(query: str) -> tuple[str, None]:
-    """Search PubMed. Returns PMIDs and titles."""
-    pmids = pubmed.search_pubmed(query)
-    text = "\n".join(
-        f"- {p} | {pubmed.fetch_abstract_cached(p)['title']}" for p in pmids
-    )
-    return text or "No results.", None
-
-
-@tool(response_format="content_and_artifact")
-def fetch_abstract(pmid: str) -> tuple[str, Source]:
-    """Read a PubMed abstract found with search_pubmed. It can then be cited by its PMID."""
-    a = pubmed.fetch_abstract_cached(pmid)
-    source = Source(kind="pubmed", reference=pmid, title=a["title"], role="trial_info")
-    return f"[{pmid}] {a['title']}\n{a['abstract']}", source
-
-
-TOOLS = [web_search, fetch_page, search_pubmed, fetch_abstract]
+TOOLS = [fetch_page]
 TOOLS_BY_NAME = {t.name: t for t in TOOLS}
 
 llm = ChatOpenAI(
@@ -106,6 +140,7 @@ class AgentState(TypedDict):
     nct_id: str
     run_id: str
     output: SummariserOutput | None
+    allowed_urls: list[str]  # URLs from the search results: the only pages that may be fetched
 
 
 def _log(state: AgentState, call):
@@ -123,25 +158,40 @@ def _log(state: AgentState, call):
 
 
 def agent_node(state: AgentState) -> dict:
-    """The model decides: call a tool, or stop. Past the limit it gets no tools."""
-    model = llm_with_tools if state["n_calls"] < MAX_TOOL_CALLS else llm
-    message = _log(state, lambda: model.invoke(state["messages"]))
+    """The model decides: fetch a page, or stop."""
+    message = _log(state, lambda: llm_with_tools.invoke(state["messages"]))
     return {"messages": [message]}
 
 
+def after_tools(state: AgentState) -> str:
+    """Limit reached -> answer now, without asking the model again."""
+    return "answer" if state["n_calls"] >= MAX_TOOL_CALLS else "agent"
+
+
 def tools_node(state: AgentState) -> dict:
-    """Run the requested tools and record what was fetched."""
+    """Run the requested tools and record what was fetched.
+    Only URLs from the search results may be fetched (checked here, in code)."""
     new_messages, new_sources = [], []
     for call in state["messages"][-1].tool_calls:
         print(
             f"  tool {state['n_calls'] + len(new_messages) + 1}: {call['name']}({call['args']})"
         )
-        try:
-            result = TOOLS_BY_NAME[call["name"]].invoke(
-                call
-            )  # -> ToolMessage, with .artifact
-        except Exception as e:  # a failing tool must not kill the run
-            result = ToolMessage(content=f"Tool error: {e}", tool_call_id=call["id"])
+        url = call["args"].get("url", "")
+        if call["name"] == "fetch_page" and url not in state["allowed_urls"]:
+            print("    refused: not in the search results")
+            result = ToolMessage(
+                content="Not allowed: only URLs from the search results can be fetched.",
+                tool_call_id=call["id"],
+            )
+        else:
+            try:
+                result = TOOLS_BY_NAME[call["name"]].invoke(
+                    call
+                )  # -> ToolMessage, with .artifact
+            except Exception as e:  # a failing tool must not kill the run
+                result = ToolMessage(
+                    content=f"Tool error: {e}", tool_call_id=call["id"]
+                )
         new_messages.append(result)
         if getattr(result, "artifact", None):
             new_sources.append(result.artifact)
@@ -169,24 +219,29 @@ graph.add_node("tools", tools_node)
 graph.add_node("answer", answer_node)
 graph.add_edge(START, "agent")
 graph.add_conditional_edges("agent", route, ["tools", "answer"])
-graph.add_edge("tools", "agent")
+graph.add_conditional_edges("tools", after_tools, ["agent", "answer"])
 graph.add_edge("answer", END)
 app = graph.compile()
 
 
 def run_agent(row: dict, abstracts: list[dict], run_id: str) -> TrialSummary:
     text, sources = build_sources(row, abstracts)
+    results_text, urls = search_results_text(row)
     final = app.invoke(
         {
             "messages": [
                 SystemMessage(AGENT_INSTRUCTIONS),
-                HumanMessage(f"Trial: {row['nct_id']}\n\n{text}"),
+                HumanMessage(
+                    f"Trial: {row['nct_id']}\n\n{text}"
+                    f"\n\nWeb search results:\n{results_text}"
+                ),
             ],
             "fetched": [],
             "n_calls": 0,
             "output": None,
             "nct_id": row["nct_id"],
             "run_id": run_id,
+            "allowed_urls": urls,
         }
     )
     base = registry_part(row, run_id)
@@ -199,13 +254,14 @@ def run_agent(row: dict, abstracts: list[dict], run_id: str) -> TrialSummary:
             handler=HANDLER,
             n_tool_calls=final["n_calls"],
         )
-    claims, status = check_citations(output, all_sources)
+    claims, status, dropped = check_citations(output, all_sources)
     return TrialSummary(
         **base,
         stop_category=output.stop_category,
         claims=claims,
         sources_fetched=all_sources,
         status=status,
+        dropped_claims=dropped,
         handler=HANDLER,
         n_tool_calls=final["n_calls"],
     )

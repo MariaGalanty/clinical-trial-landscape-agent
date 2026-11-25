@@ -20,3 +20,15 @@ def registry_summary(t: TrialSummary) -> str:
     end = (t.completion_date or "?")[:7]
     status = t.overall_status.replace("_", " ").lower()
     return f"{kind} of {drugs or 'unnamed intervention'}. Registry dates: {start} to {end}. Status: {status}."
+
+
+def print_summary(t: TrialSummary) -> None:
+    """Short console view of one trial: registry line, stop category, cited claims."""
+    print(f"  {registry_summary(t)}")
+    if t.stop_category:
+        print(f"  stop category: {t.stop_category}")
+    if not t.claims:
+        print("  (no claims)")
+    for c in t.claims:
+        refs = ", ".join(s.reference for s in c.sources)
+        print(f"  - [{c.topic}] {c.text}\n      sources: {refs}")

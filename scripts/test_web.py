@@ -1,6 +1,6 @@
 from web import web_search, fetch_page
 
-results = web_search("NCT03068754 ALS terminated")
+results = web_search("NCT04569435 ALS results")
 for r in results:
     print(r["url"], "|", r["title"])
     print("   ", r["content"][:1000])

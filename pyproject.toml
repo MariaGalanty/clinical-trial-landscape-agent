@@ -28,7 +28,10 @@ build-backend = "setuptools.build_meta"
 # so scripts/ and tests/ can import them: `from registry import ...`
 [tool.setuptools]
 package-dir = { "" = "src" }
-py-modules = ["registry", "pubmed", "drug", "schemas", "summarise", "llm_log"]
+py-modules = [
+    "registry", "pubmed", "drug", "schemas", "summarise", "llm_log",
+    "report", "web", "trial_agent",
+]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

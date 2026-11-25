@@ -11,7 +11,7 @@ from pubmed import fetch_abstract_cached, search_pubmed_cached
 
 MODEL = "gpt-5.4"
 REASONING_EFFORT = "low"
-HANDLER = f"summariser_v1_{REASONING_EFFORT}"  # bump v1 -> v2 when the prompt changes
+HANDLER = f"summariser_v3_{REASONING_EFFORT}"  # v3: NCT id in input, only bad claims dropped
 REGISTRY_FIELDS = ("brief_title", "overall_status", "why_stopped", "brief_summary")
 
 INSTRUCTIONS = """You summarise what is known about the outcome of one clinical trial.
@@ -34,6 +34,9 @@ Rules:
   this trial (e.g. an open-label extension stopped because the parent trial did
   not meet its primary endpoint). Otherwise ignore it.
 - If the sources say nothing about the outcome, return no claims.
+- Report outcomes only: results, safety findings, why the trial stopped, or
+  progress. Do not report the trial's design (number of participants planned,
+  dosing, arms, planned endpoints, duration): the registry already has it.
 - stop_category: only for TERMINATED, WITHDRAWN or SUSPENDED trials; otherwise null.
 """
 
@@ -72,21 +75,31 @@ def build_sources(row: dict, abstracts: list[dict]) -> tuple[str, list[Source]]:
 
 def check_citations(
     output: SummariserOutput, sources: list[Source]
-) -> tuple[list[ClaimSourceValidated], Status]:
-    """Turn untrusted Claim into trusted ClaimSourceValidated. Any unknown source -> invalid_citation."""
+) -> tuple[list[ClaimSourceValidated], Status, list[str]]:
+    """Turn untrusted Claim into trusted ClaimSourceValidated.
+
+    A claim citing a source not given in this run (or no source) is dropped and
+    reported in the third return value. invalid_citation only if claims were made
+    but none survived."""
     by_ref = {s.reference: s for s in sources}
-    claims = []
+    claims, dropped = [], []
     for c in output.claims:
-        if not c.source_refs or any(ref not in by_ref for ref in c.source_refs):
-            return [], "invalid_citation"
+        unknown = [ref for ref in c.source_refs if ref not in by_ref]
+        if not c.source_refs or unknown:
+            bad = unknown or "(no sources)"
+            print(f"  dropped claim, bad refs {bad}: {c.text[:100]}")
+            dropped.append(f"{c.text} | bad refs: {bad}")
+            continue
         claims.append(
             ClaimSourceValidated(
                 text=c.text, topic=c.topic, sources=[by_ref[r] for r in c.source_refs]
             )
         )
+    if dropped and not claims:
+        return [], "invalid_citation", dropped
     # Registry facts alone don't make a trial "found": need a paper or web source
     found = any(s.kind != "registry" for c in claims for s in c.sources)
-    return claims, "found" if found else "not_found"
+    return claims, "found" if found else "not_found", dropped
 
 
 def registry_part(row: dict, run_id: str) -> dict:
@@ -140,7 +153,7 @@ def summarise_trial(row: dict, abstracts: list[dict], run_id: str) -> TrialSumma
         lambda: client.responses.parse(
             model=MODEL,
             instructions=INSTRUCTIONS,
-            input=text,
+            input=f"Trial: {row['nct_id']}\n\n{text}",
             text_format=SummariserOutput,
             reasoning={"effort": REASONING_EFFORT},
         ),
@@ -154,12 +167,13 @@ def summarise_trial(row: dict, abstracts: list[dict], run_id: str) -> TrialSumma
     if output is None:  # model refused or was cut off
         return TrialSummary(**base, sources_fetched=sources, handler=HANDLER)
 
-    claims, status = check_citations(output, sources)
+    claims, status, dropped = check_citations(output, sources)
     return TrialSummary(
         **base,
         stop_category=output.stop_category,
         claims=claims,
         sources_fetched=sources,
         status=status,
+        dropped_claims=dropped,
         handler=HANDLER,
     )

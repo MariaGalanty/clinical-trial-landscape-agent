@@ -13,6 +13,7 @@ from llm_log import LOG_PATH
 from registry import flatten_study
 from summarise import gather_abstracts, summarise_trial
 from trial_agent import run_agent
+from report import print_summary
 
 project_root = Path(__file__).resolve().parent.parent
 studies = json.loads(
@@ -33,12 +34,22 @@ with out_path.open("w", encoding="utf-8") as f:
         before = summary.status
         if summary.status == "not_found":
             print(f"{row['nct_id']}  not_found -> running agent")
-            summary = run_agent(row, abstracts, run_id)
+            try:
+                agent_summary = run_agent(row, abstracts, run_id)
+            except (
+                Exception
+            ) as e:  # network error, rate limit, ... -> keep the summariser's result
+                print(f"  agent failed: {e!r}")
+                agent_summary = summary
+            if agent_summary.status == "found":
+                summary = agent_summary
         f.write(summary.model_dump_json() + "\n")
         print(
             f"{summary.nct_id}  {before:<16} -> {summary.status:<16} "
             f"claims={len(summary.claims)}  {summary.handler}"
         )
+        print_summary(summary)
+        print()
 
 records = [json.loads(line) for line in LOG_PATH.open(encoding="utf-8")]
 cost = sum(r.get("cost_usd") or 0 for r in records if r["run_id"] == run_id)

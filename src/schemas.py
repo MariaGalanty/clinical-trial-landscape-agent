@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 SourceKind = Literal["registry", "pubmed", "web"]
 SourceRole = Literal["trial_info", "background_info"]
-Topic = Literal["stop_reason", "results", "progress", "design"]
+Topic = Literal["stop_reason", "results", "progress"]
 StopCategory = Literal[
     "efficacy_futility", "safety", "business_strategic", "enrolment", "other", "unclear"
 ]
@@ -77,11 +77,12 @@ class TrialSummary(BaseModel):
     )
     claims: list[
         ClaimSourceValidated
-    ] = []  # THE SUMMARY: all sentences, any topic (results, stop_reason, progress, design)
+    ] = []  # THE SUMMARY: all sentences, any topic (results, stop_reason, progress)
     sources_fetched: list[Source] = []  # everything that was fetched, cited or not
 
     # from the citation check
     status: Status = "not_found"
+    dropped_claims: list[str] = []  # claims removed by the citation check, with their bad refs
 
     # about the run
     handler: str

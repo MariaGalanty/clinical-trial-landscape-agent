@@ -68,6 +68,8 @@ for t in summaries:
     for i, c in enumerate(t.claims, 1):
         refs = ", ".join(s.reference for s in c.sources)
         print(f"  {i}. [{c.topic}] {c.text}\n     sources: {refs}")
+    for d in t.dropped_claims:
+        print(f"  DROPPED: {d}")
 
     print(f"SOURCES FETCHED ({len(t.sources_fetched)})")
     cited = {s.reference for c in t.claims for s in c.sources}
