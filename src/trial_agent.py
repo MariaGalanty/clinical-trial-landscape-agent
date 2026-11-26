@@ -12,19 +12,22 @@ from langgraph.graph.message import add_messages
 
 import web
 from llm_log import logged_call
-from schemas import Source, SummariserOutput, TrialSummary
+from schemas import AgentOutput, Source, TrialSummary
 from summarise import (
     INSTRUCTIONS,
+    ONGOING,
+    STOPPED,
     MODEL,
     REASONING_EFFORT,
     build_sources,
     check_citations,
+    decide_status,
     registry_part,
 )
 
 MAX_TOOL_CALLS = 5
 PAGE_CHARS = 20000
-HANDLER = f"trial_agent_v5_{REASONING_EFFORT}"  # v5: URL gate, only bad claims dropped
+HANDLER = f"trial_agent_v8_{REASONING_EFFORT}"  # v8: status from claim topics (found / ongoing)
 
 AGENT_INSTRUCTIONS = (
     INSTRUCTIONS
@@ -42,6 +45,9 @@ AGENT_INSTRUCTIONS = (
     - RECRUITING and other ongoing statuses: progress, e.g. enrolment, interim
     results or expected dates.
     - UNKNOWN: whether it finished or stopped, and any results.
+    For COMPLETED, stopped and UNKNOWN trials, news that recruitment started or
+    that the trial is planned is not an outcome: report it, but keep looking for
+    results or why the trial ended.
 
     How to search the pages:
     - Fetch the pages most likely to answer this: news articles, company press
@@ -52,9 +58,11 @@ AGENT_INSTRUCTIONS = (
     looks useful. Returning no claims is a valid answer.
 
     How to report:
-    - Report what each usable page says, with its context: the date, whether the
-    data are preliminary or final, and how many patients they cover (e.g. "In
-    January 2023, preliminary data from 8 patients showed ...").
+    - Report each finding once, with its context: the date, whether the data are
+    preliminary or final, and how many patients they cover (e.g. "In January
+    2023, preliminary data from 8 patients showed ..."). If several sources
+    report the same finding, write one claim and cite all of them, including
+    registry fields and papers.
     - If usable pages disagree, report both claims, each with its context, so the
     reader can see what changed (e.g. preliminary results vs. final results).
     - Preliminary, interim and secondary-endpoint results count as outcomes, as
@@ -62,20 +70,16 @@ AGENT_INSTRUCTIONS = (
     - Cite a page by its exact URL, copied from its [label]. Only fetched pages
     can be cited. Search snippets are not evidence: do not cite them, and do not
     drop a finding from a fetched page because a snippet says something else.
+
+    search_note: one or two sentences on what you found or could not find and
+    why, e.g. "The 10 search results were registry copies and chemistry papers;
+    none reported this trial." or "Two news articles reported preliminary
+    results; no final results were found." Write it even when you found claims.
 """
 )
 
 
 # ---- Web search: run by code, not by the model. Query = <NCT> ALS <state> ----
-
-STOPPED = {"TERMINATED", "WITHDRAWN", "SUSPENDED"}
-ONGOING = {
-    "RECRUITING",
-    "ACTIVE_NOT_RECRUITING",
-    "ENROLLING_BY_INVITATION",
-    "NOT_YET_RECRUITING",
-}
-
 
 def web_queries(row: dict) -> list[str]:
     """One query per trial; UNKNOWN status gets both 'results' and 'stopped'."""
@@ -126,7 +130,7 @@ llm = ChatOpenAI(
 )
 llm_with_tools = llm.bind_tools(TOOLS, parallel_tool_calls=False)
 llm_answer = llm.with_structured_output(
-    SummariserOutput, method="json_schema", include_raw=True
+    AgentOutput, method="json_schema", include_raw=True
 )
 
 
@@ -139,8 +143,10 @@ class AgentState(TypedDict):
     n_calls: int
     nct_id: str
     run_id: str
-    output: SummariserOutput | None
-    allowed_urls: list[str]  # URLs from the search results: the only pages that may be fetched
+    output: AgentOutput | None
+    allowed_urls: list[
+        str
+    ]  # URLs from the search results: the only pages that may be fetched
 
 
 def _log(state: AgentState, call):
@@ -251,10 +257,14 @@ def run_agent(row: dict, abstracts: list[dict], run_id: str) -> TrialSummary:
         return TrialSummary(
             **base,
             sources_fetched=all_sources,
+            status=decide_status(row["overall_status"], []),
+            search_note="The agent returned no answer.",
             handler=HANDLER,
             n_tool_calls=final["n_calls"],
         )
-    claims, status, dropped = check_citations(output, all_sources)
+    claims, status, dropped = check_citations(
+        output, all_sources, row["overall_status"]
+    )
     return TrialSummary(
         **base,
         stop_category=output.stop_category,
@@ -262,6 +272,7 @@ def run_agent(row: dict, abstracts: list[dict], run_id: str) -> TrialSummary:
         sources_fetched=all_sources,
         status=status,
         dropped_claims=dropped,
+        search_note=output.search_note,
         handler=HANDLER,
         n_tool_calls=final["n_calls"],
     )

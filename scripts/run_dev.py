@@ -32,17 +32,26 @@ with out_path.open("w", encoding="utf-8") as f:
         abstracts = gather_abstracts(row)
         summary = summarise_trial(row, abstracts, run_id)
         before = summary.status
-        if summary.status == "not_found":
-            print(f"{row['nct_id']}  not_found -> running agent")
+        if summary.status in ("not_found", "ongoing"):  # outcome not found yet -> try the web
+            print(f"{row['nct_id']}  {summary.status} -> running agent")
             try:
                 agent_summary = run_agent(row, abstracts, run_id)
             except (
                 Exception
             ) as e:  # network error, rate limit, ... -> keep the summariser's result
                 print(f"  agent failed: {e!r}")
-                agent_summary = summary
+                agent_summary = summary.model_copy(
+                    update={"search_note": f"Agent failed: {e!r}"}
+                )
             if agent_summary.status == "found":
                 summary = agent_summary
+            else:  # keep the summariser's result, but record what the agent tried
+                summary = summary.model_copy(
+                    update={
+                        "search_note": agent_summary.search_note,
+                        "n_tool_calls": agent_summary.n_tool_calls,
+                    }
+                )
         f.write(summary.model_dump_json() + "\n")
         print(
             f"{summary.nct_id}  {before:<16} -> {summary.status:<16} "

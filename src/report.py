@@ -27,6 +27,8 @@ def print_summary(t: TrialSummary) -> None:
     print(f"  {registry_summary(t)}")
     if t.stop_category:
         print(f"  stop category: {t.stop_category}")
+    if t.search_note:
+        print(f"  search note: {t.search_note}")
     if not t.claims:
         print("  (no claims)")
     for c in t.claims:

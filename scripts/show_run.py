@@ -63,6 +63,8 @@ for t in summaries:
 
     print("SUMMARY")
     print(f"  status: {t.status} | stop_category: {t.stop_category or '-'}")
+    if t.search_note:
+        print(f"  search note: {t.search_note}")
     if not t.claims:
         print("  (no claims)")
     for i, c in enumerate(t.claims, 1):

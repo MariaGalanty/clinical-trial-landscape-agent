@@ -11,7 +11,7 @@ from pubmed import fetch_abstract_cached, search_pubmed_cached
 
 MODEL = "gpt-5.4"
 REASONING_EFFORT = "low"
-HANDLER = f"summariser_v3_{REASONING_EFFORT}"  # v3: NCT id in input, only bad claims dropped
+HANDLER = f"summariser_v5_{REASONING_EFFORT}"  # v5: status from claim topics (found / ongoing)
 REGISTRY_FIELDS = ("brief_title", "overall_status", "why_stopped", "brief_summary")
 
 INSTRUCTIONS = """You summarise what is known about the outcome of one clinical trial.
@@ -26,7 +26,9 @@ What to report:
 
 Rules:
 - Use only the given sources. Do not use outside knowledge about the drug or sponsor.
-- One fact per claim, as a short sentence.
+- One fact per claim, as a short sentence. Report each fact only once.
+- If several sources support the same fact, write ONE claim and list all of
+  those sources in source_refs (e.g. ["28872918", "28872914"]).
 - Every claim lists the labels of the sources that support it in source_refs,
   without the brackets (e.g. "34536404", "registry:why_stopped").
 - A paper may be about a different trial (e.g. an earlier phase of the same drug).
@@ -73,10 +75,36 @@ def build_sources(row: dict, abstracts: list[dict]) -> tuple[str, list[Source]]:
     return "\n\n".join(parts), sources
 
 
+STOPPED = {"TERMINATED", "WITHDRAWN", "SUSPENDED"}
+ONGOING = {
+    "RECRUITING",
+    "ACTIVE_NOT_RECRUITING",
+    "ENROLLING_BY_INVITATION",
+    "NOT_YET_RECRUITING",
+}
+OUTCOME_TOPICS = {"results", "stop_reason"}
+
+
+def decide_status(overall_status: str, claims: list[ClaimSourceValidated]) -> Status:
+    """found = a paper/web page reports the outcome. Registry facts alone never count.
+
+    - results or stop_reason from a paper/web page -> found
+    - ongoing trial: progress from a paper/web page -> found; nothing new -> ongoing
+    - finished/stopped/unknown trial with only progress news (e.g. "recruitment
+      started in 2017") -> not_found: the outcome is still unknown
+    """
+    external = [c for c in claims if any(s.kind != "registry" for s in c.sources)]
+    if any(c.topic in OUTCOME_TOPICS for c in external):
+        return "found"
+    if overall_status in ONGOING:
+        return "found" if external else "ongoing"
+    return "not_found"
+
+
 def check_citations(
-    output: SummariserOutput, sources: list[Source]
+    output: SummariserOutput, sources: list[Source], overall_status: str
 ) -> tuple[list[ClaimSourceValidated], Status, list[str]]:
-    """Turn untrusted Claim into trusted ClaimSourceValidated.
+    """Turn untrusted Claim into trusted ClaimSourceValidated, then decide the status.
 
     A claim citing a source not given in this run (or no source) is dropped and
     reported in the third return value. invalid_citation only if claims were made
@@ -95,11 +123,20 @@ def check_citations(
                 text=c.text, topic=c.topic, sources=[by_ref[r] for r in c.source_refs]
             )
         )
+    # Merge claims with the same text (ignoring case and spacing): one claim, all their sources
+    merged: dict[str, ClaimSourceValidated] = {}
+    for c in claims:
+        key = " ".join(c.text.lower().split())
+        if key in merged:
+            known = {s.reference for s in merged[key].sources}
+            merged[key].sources += [s for s in c.sources if s.reference not in known]
+        else:
+            merged[key] = c
+    claims = list(merged.values())
+
     if dropped and not claims:
         return [], "invalid_citation", dropped
-    # Registry facts alone don't make a trial "found": need a paper or web source
-    found = any(s.kind != "registry" for c in claims for s in c.sources)
-    return claims, "found" if found else "not_found", dropped
+    return claims, decide_status(overall_status, claims), dropped
 
 
 def registry_part(row: dict, run_id: str) -> dict:
@@ -146,7 +183,10 @@ def summarise_trial(row: dict, abstracts: list[dict], run_id: str) -> TrialSumma
     # Nothing to summarise -> no LLM call, no cost
     if not abstracts and not row.get("why_stopped"):
         return TrialSummary(
-            **base, sources_fetched=sources, handler="skipped_no_sources"
+            **base,
+            sources_fetched=sources,
+            status=decide_status(row["overall_status"], []),
+            handler="skipped_no_sources",
         )
 
     response = logged_call(
@@ -165,9 +205,14 @@ def summarise_trial(row: dict, abstracts: list[dict], run_id: str) -> TrialSumma
     )
     output = response.output_parsed
     if output is None:  # model refused or was cut off
-        return TrialSummary(**base, sources_fetched=sources, handler=HANDLER)
+        return TrialSummary(
+            **base,
+            sources_fetched=sources,
+            status=decide_status(row["overall_status"], []),
+            handler=HANDLER,
+        )
 
-    claims, status, dropped = check_citations(output, sources)
+    claims, status, dropped = check_citations(output, sources, row["overall_status"])
     return TrialSummary(
         **base,
         stop_category=output.stop_category,
