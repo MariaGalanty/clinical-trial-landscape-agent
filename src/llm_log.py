@@ -45,6 +45,19 @@ PRICES = {**load_prices(PRICES_FILE), **MANUAL_PRICES}  # manual wins
 
 def normalize_usage(provider: str, response: Any) -> dict[str, int | None]:
     """Turn each provider's usage object into the same fields."""
+    if (
+        provider == "langchain"
+    ):  # AIMessage, or the dict from with_structured_output(include_raw=True)
+        message = response["raw"] if isinstance(response, dict) else response
+        u = message.usage_metadata or {}
+        cached = (u.get("input_token_details") or {}).get("cache_read", 0) or 0
+        return {
+            "uncached_input": u.get("input_tokens", 0) - cached,
+            "cached_input": cached,
+            "cache_write": 0,
+            "output": u.get("output_tokens", 0),
+            "reasoning": (u.get("output_token_details") or {}).get("reasoning", 0) or 0,
+        }
     u = response.usage
     if provider == "openai":  # Responses API (client.responses.create / .parse)
         cached = u.input_tokens_details.cached_tokens or 0

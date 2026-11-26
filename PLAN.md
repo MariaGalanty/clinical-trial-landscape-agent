@@ -162,6 +162,7 @@ Each step ends with a "done when" check. Days are focused working days.
 | 8 | **Search agent** (LangGraph): PubMed free text + fetch, then web search + fetch; max 5 tool calls; second step in the chain | 5 `not_found` dev trials give a cited answer or `not_found` | 1–1.5 |
 | 9 | **Evaluate the agent** (5b) | Agent metrics table; failures written up | 0.5 |
 | 10 | **README, CLI, Docker, CV line** | Someone else can clone, run and understand it in 10 minutes | 0.5–1 |
+| 11 | **FastAPI demo** (read-only): serves the precomputed, evaluated summaries per disease; no LLM or PubMed calls and no API keys at runtime (see section 9) | `/docs` lets someone browse ALS trials, open one trial's cited claims, and see the eval metrics and cost per trial | 0.5–1 |
 
 **Total: about 6–7 days.** Steps 1–3 and 5–6 are the two-day "working
 pipeline". Steps 4, 7 and 9 make it credible. Step 4 comes before step 5 on
@@ -170,6 +171,9 @@ purpose: labels made after seeing outputs are biased toward the outputs.
 If time runs short, cut in this order: Docker → `landscape.md` polish → web
 search (keep the agent with PubMed only). **Never cut:** the citation check
 and the evaluation.
+
+Steps 1–10 are v1. Step 11 and section 9 come only after v1 is finished and
+evaluated.
 
 ## 7. Open decisions
 
@@ -189,3 +193,31 @@ and the evaluation.
   out of scope.
 - From branch `wip` if useful: the stop-reason prompt (for
   `stop_category`) and the router's `run_chain` idea.
+
+## 9. Later (v2), after v1 is evaluated
+
+In this order:
+
+1. **FastAPI demo (step 11).** The pipeline runs offline, once per disease,
+   and writes the summaries to files. The API only reads them: no cost per
+   visitor, instant answers, no keys to leak, stable results. The disease is
+   part of the URL, so a new disease is a new data file:
+   - `GET /diseases`
+   - `GET /diseases/{disease}/trials?status=&drug=`
+   - `GET /diseases/{disease}/trials/{nct_id}` (one `TrialSummary` with cited claims)
+   - `GET /diseases/{disease}/stats` (counts, cost per trial, eval metrics)
+2. **More neurodegenerative diseases.** First a small, related one (FTD,
+   Huntington's or SMA) to test that the pipeline generalises, then one large
+   one (Parkinson's or Alzheimer's). Before each: count its trials
+   (`totalCount`), estimate the cost from the ALS cost per trial, and label a
+   small test set before claiming it works.
+3. **Knowledge graph**, once 2–3 diseases are in. Start from the questions it
+   must answer, for example:
+   - which drugs were tested in more than one disease, and with what outcome;
+   - which mechanisms failed repeatedly across diseases;
+   - which sponsors stopped several trials for business reasons.
+
+   Stage 1: edges from registry fields only, no LLM (trial–drug,
+   trial–disease, trial–sponsor, trial–outcome). Stage 2: edges extracted
+   from cited claims, each edge carrying its PMID. The hard part is entity
+   resolution (one drug under several names), not the graph itself.

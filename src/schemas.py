@@ -7,11 +7,13 @@ from pydantic import BaseModel, Field
 
 SourceKind = Literal["registry", "pubmed", "web"]
 SourceRole = Literal["trial_info", "background_info"]
-Topic = Literal["stop_reason", "results", "progress", "design"]
+Topic = Literal["stop_reason", "results", "progress"]
 StopCategory = Literal[
     "efficacy_futility", "safety", "business_strategic", "enrolment", "other", "unclear"
 ]
-Status = Literal["found", "not_found", "invalid_citation"]
+# found: a paper/web page reports the outcome (results or stop reason; for ongoing trials also progress)
+# ongoing: registry says the trial is ongoing and no newer source was found
+Status = Literal["found", "ongoing", "not_found", "invalid_citation"]
 
 
 class Source(BaseModel):
@@ -55,6 +57,12 @@ class SummariserOutput(BaseModel):
     claims: list[Claim]
 
 
+class AgentOutput(SummariserOutput):
+    """What the web agent returns: the summariser's output + a note on its search."""
+
+    search_note: str  # what was searched and read, and why the outcome was or wasn't found
+
+
 # ------ The full record, assembled by code ---
 class TrialSummary(BaseModel):
     # from the trial registery, no LLM
@@ -77,11 +85,13 @@ class TrialSummary(BaseModel):
     )
     claims: list[
         ClaimSourceValidated
-    ] = []  # THE SUMMARY: all sentences, any topic (results, stop_reason, progress, design)
+    ] = []  # THE SUMMARY: all sentences, any topic (results, stop_reason, progress)
     sources_fetched: list[Source] = []  # everything that was fetched, cited or not
 
     # from the citation check
     status: Status = "not_found"
+    dropped_claims: list[str] = []  # claims removed by the citation check, with their bad refs
+    search_note: str | None = None  # from the web agent: what it searched and why it stopped (not evidence)
 
     # about the run
     handler: str
